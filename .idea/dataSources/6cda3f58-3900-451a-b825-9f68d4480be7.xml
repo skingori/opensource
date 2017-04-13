@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="shopping@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="shopping">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="acx.adb"/>
+    <schema id="4" parent="1" name="asms"/>
+    <schema id="5" parent="1" name="blog"/>
+    <schema id="6" parent="1" name="bsu"/>
+    <schema id="7" parent="1" name="cart"/>
+    <schema id="8" parent="1" name="dailydaima"/>
+    <schema id="9" parent="1" name="daima"/>
+    <schema id="10" parent="1" name="db_project"/>
+    <schema id="11" parent="1" name="edgedata"/>
+    <schema id="12" parent="1" name="employee"/>
+    <schema id="13" parent="1" name="farmer"/>
+    <schema id="14" parent="1" name="flexdb"/>
+    <schema id="15" parent="1" name="information_schema"/>
+    <schema id="16" parent="1" name="logs"/>
+    <schema id="17" parent="1" name="mhub"/>
+    <schema id="18" parent="1" name="mysql"/>
+    <schema id="19" parent="1" name="ndiuni"/>
+    <schema id="20" parent="1" name="node"/>
+    <schema id="21" parent="1" name="nodes"/>
+    <schema id="22" parent="1" name="notes"/>
+    <schema id="23" parent="1" name="onlins"/>
+    <schema id="24" parent="1" name="orpm"/>
+    <schema id="25" parent="1" name="performance_schema"/>
+    <schema id="26" parent="1" name="phpmyadmin"/>
+    <schema id="27" parent="1" name="prison"/>
+    <schema id="28" parent="1" name="sales"/>
+    <schema id="29" parent="1" name="stock"/>
+    <schema id="30" parent="1" name="store"/>
+    <schema id="31" parent="1" name="sundb"/>
+    <schema id="32" parent="1" name="taifa_jobs"/>
+    <schema id="33" parent="1" name="tarclink"/>
+    <schema id="34" parent="1" name="test"/>
+    <table id="35" parent="2" name="category_table"/>
+    <table id="36" parent="2" name="feedback_table"/>
+    <table id="37" parent="2" name="login_table"/>
+    <table id="38" parent="2" name="products_table"/>
+    <table id="39" parent="2" name="supplier_product"/>
+    <table id="40" parent="2" name="supplier_table"/>
+    <column id="41" parent="35" name="category_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="42" parent="35" name="category_desc">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="35" name="category_name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="44" parent="35" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>category_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="45" parent="36" name="feedback_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="46" parent="36" name="feedback_product_id">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="36" name="feedback_ratings">
+      <Position>3</Position>
+      <DataType>int(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="36" name="feedback_user_contact">
+      <Position>4</Position>
+      <DataType>int(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="36" name="feedback_user_id">
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="50" parent="36" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>feedback_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="51" parent="37" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="52" parent="37" name="login_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="37" name="login_username">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="54" parent="37" name="login_password">
+      <Position>4</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="37" name="login_rank">
+      <Position>5</Position>
+      <DataType>int(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="37" name="login_name">
+      <Position>6</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="57" parent="37" name="login_id">
+      <ColNames>login_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="58" parent="37" name="login_username">
+      <ColNames>login_username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="59" parent="37" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="60" parent="37" name="login_id">
+      <ColNames>login_id</ColNames>
+      <UnderlyingIndexName>login_id</UnderlyingIndexName>
+    </key>
+    <key id="61" parent="37" name="login_username">
+      <ColNames>login_username</ColNames>
+      <UnderlyingIndexName>login_username</UnderlyingIndexName>
+    </key>
+    <column id="62" parent="38" name="product_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="63" parent="38" name="product_code">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="38" name="product_name">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="65" parent="38" name="product_price">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="38" name="product_quantity">
+      <Position>5</Position>
+      <DataType>int(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="38" name="product_image">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="38" name="product_desc">
+      <Position>7</Position>
+      <DataType>tinytext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="38" name="product_category_id">
+      <Position>8</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="70" parent="38" name="product_code">
+      <ColNames>product_code</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="71" parent="38" name="product_id">
+      <ColNames>product_id</ColNames>
+    </index>
+    <key id="72" parent="38" name="product_code">
+      <ColNames>product_code</ColNames>
+      <UnderlyingIndexName>product_code</UnderlyingIndexName>
+    </key>
+    <column id="73" parent="39" name="supplier_product_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="74" parent="39" name="supplier_product_supplier_id">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="75" parent="39" name="supplier_product_product_id">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="76" parent="39" name="supplier_product_price">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="77" parent="39" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>supplier_product_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="78" parent="40" name="supplier_id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="79" parent="40" name="supplier_name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="80" parent="40" name="supplier_address">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="81" parent="40" name="supplier_conatct">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="82" parent="40" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>supplier_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
