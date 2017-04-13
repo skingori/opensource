@@ -255,7 +255,7 @@ while($res = mysqli_fetch_array($result1))
 
             //fetching data in descending order (lastest entry first)
             //$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
-            $result = mysqli_query($con, "SELECT * FROM categorier_table ORDER BY categorier_id ASC"); // using mysqli_query instead
+            $result = mysqli_query($con, "SELECT * FROM category_table ORDER BY category_id ASC"); // using mysqli_query instead
             ?>
 
             <table  border=0 cellpadding="1" cellspacing="1" id="" width="100%" class="table table-hover table-condensed table-striped">
@@ -270,9 +270,9 @@ while($res = mysqli_fetch_array($result1))
                 //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array
                 while($res = mysqli_fetch_array($result)) {
                     echo "<tr class=\"danger\">";
-                    echo "<td class='active'>".$res['categorier_id']."</td>";
-                    echo "<td>".$res['categorier_desc']."</td>";
-                    echo "<td>".$res['categorier_name']."</td>";
+                    echo "<td class='active'>".$res['category_id']."</td>";
+                    echo "<td>".$res['category_desc']."</td>";
+                    echo "<td>".$res['category_name']."</td>";
                     //echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
                 }
                 ?>

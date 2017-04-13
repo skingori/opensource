@@ -38,7 +38,7 @@ while($res = mysqli_fetch_array($result1))
 
 <?php
         
-        require '../connection/db.php';
+      require '../connection/db.php';
 
       if (isset($_POST['submit'])) {
 
@@ -53,10 +53,10 @@ while($res = mysqli_fetch_array($result1))
                 $product_code_=$_POST['product_code'];
                 $product_price_=$_POST['product_price'];
                 //$product_quantity_=$_POST['product_quantity'];
-                $product_category_=$_POST['product_category'];
+                $product_category_id_=$_POST['product_category_id'];
                 $product_desc_=$_POST['product_desc'];
-                                mysqli_query($con,"INSERT INTO products_table (product_name,product_image,product_code,product_price,product_category,product_desc)
-      values ('$product_name_','$location','$product_code_','$product_price_','$product_category_','$product_desc_')
+                                mysqli_query($con,"INSERT INTO products_table (product_name,product_image,product_code,product_price,product_category_id,product_desc)
+      values ('$product_name_','$location','$product_code_','$product_price_','$product_category_id_','$product_desc_')
       ") or die(mysql_error());
          
        $msg = "<div class='alert alert-success'>
@@ -307,14 +307,14 @@ while($res = mysqli_fetch_array($result1))
           </div>
           <div class="form-group has-feedback">
               <label>Product Category:</label>
-                      <select name="product_category" required class="form-control">
+                      <select name="product_category_id" required class="form-control">
                            <option>
                                 <?php
-                          $result = mysqli_query($con,"SELECT categorier_name FROM categorier_table");
+                          $result = mysqli_query($con,"SELECT category_name FROM category_table");
                           while($row = mysqli_fetch_array($result))
                             {
-                              echo '<option value="'.$row['categorier_name'].'">';
-                              echo $row['categorier_name'];
+                              echo '<option value="'.$row['category_name'].'">';
+                              echo $row['category_name'];
                               echo '</option>';
                             }
                           ?>

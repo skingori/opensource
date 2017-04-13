@@ -148,6 +148,11 @@ while($res = mysqli_fetch_array($result1))
                 </li>
                 <li class="active">
                     <a href="feedback.php">
+                        <i class="fa fa-question"></i> <span>Suppliers</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="feedback.php">
                         <i class="fa fa-question"></i> <span>Feedback</span>
                     </a>
                 </li>

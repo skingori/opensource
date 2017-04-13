@@ -41,10 +41,10 @@ while($res = mysqli_fetch_array($result1))
         require '../connection/db.php';
 
       if (isset($_POST['submit'])) {             
-                $categorier_desc_=$_POST['categorier_desc'];
-                $categorier_name_=$_POST['categorier_name'];
-                                mysqli_query($con,"INSERT INTO categorier_table (categorier_desc,categorier_name)
-      values ('$categorier_desc_','$categorier_name_')
+                $category_desc_=$_POST['category_desc'];
+                $category_name_=$_POST['category_name'];
+                                mysqli_query($con,"INSERT INTO category_table (category_desc,category_name)
+      values ('$category_desc_','$category_name_')
       ") or die(mysql_error());
          
        $msg = "<div class='alert alert-success'>
@@ -276,11 +276,11 @@ while($res = mysqli_fetch_array($result1))
           
           <div class="form-group has-feedback">
               <label>Category Description:</label>
-              <input type="text" name="categorier_desc"  id="in" required class="form-control"/>
+              <input type="text" name="category_desc"  id="in" required class="form-control"/>
           </div>
           <div class="form-group has-feedback">
               <label>Category Name:</label>
-              <input type="text" name="categorier_name"  id="in" required class="form-control"/>
+              <input type="text" name="category_name"  id="in" required class="form-control"/>
           </div>
           <div class="form-group has-feedback">
               <input type="submit" name="submit" value="Add Category" class="btn btn-primary" />

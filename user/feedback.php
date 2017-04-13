@@ -31,14 +31,33 @@ $result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$
 while($res = mysqli_fetch_array($result1))
 {
     $name= $res['login_name'];
+    $lid=$res['login_id'];
 
 }
 
 ?>
+<?php
+        
+      require '../connection/db.php';
 
+      if (isset($_POST['update'])) {
+                $feedback_product_id_=$_POST['feedback_product_id'];
+                $feedback_ratings_=$_POST['group-1'];
+                $feedback_user_id_=$lid;
+                $feedback_user_contact_=$_POST['feedback_user_contact'];
+                                mysqli_query($con,"INSERT INTO feedback_table (feedback_product_id,feedback_ratings,feedback_user_id,feedback_user_contact)
+      VALUES ('$feedback_product_id_','$feedback_ratings_','$feedback_user_id_','$feedback_user_contact_')
+      ") or die(mysql_error());
+         
+       $msg = "<div class='alert alert-info'>
+						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; Thank you for your feedback !
+					</div>";
+       echo '<meta content="2;" http-equiv="refresh" />';
 
+      }
 
-
+                            
+      ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -176,27 +195,33 @@ while($res = mysqli_fetch_array($result1))
         <section class="content">
             <!--********************Add content here *******************-->
             <form class="" method="POST">
+                    <?php
+                    if (isset($msg)) {
+                        echo $msg;
+                    }
+                    ?>
+                
                 <div class="form-group">
+                    <label>Product code:</label>
                     <select name="feedback_product_id" required class="form-control">
                             <?php
 
-                            include("../connection/connector.php");
-                            $query = "SELECT * FROM employee_table";
-                            $result = mysql_query($query);
+                            include("../connection/db.php");
+                            $query = "SELECT * FROM products_table";
+                            $result = mysqli_query($con,$query);
                             echo "<option>Select Product ID</option>";
-                            while($row = mysql_fetch_array($result))
+                            while($row = mysqli_fetch_array($result))
                             {
-                                    $employee_firstname = $row[1];
-                                    $employee_lastname = $row[2];
-                                    $employee_username = $row[8];
-                                    echo "<option>$employee_firstname &nbsp $mployee_lastname</option>";
+                                   
+                                    $product_code = $row[product_code];
+                                    echo "<option>$product_code</option>";
                             }
 
                             ?>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Rate user: </label>
+                    <label>Rate user</label>
                     <div class="acidjs-rating-stars">
                     <input type="radio" name="group-1" id="group-1-0" value="5" /><label for="group-1-0"></label>
                     <input type="radio" name="group-1" id="group-1-1" value="4" /><label for="group-1-1"></label>
@@ -207,7 +232,8 @@ while($res = mysqli_fetch_array($result1))
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="feedback_user_id" required="" placeholder="Enter Your ID">
+                    <label>Mobile number</label>
+                    <input type="text" class="form-control" name="feedback_user_contact" required="" placeholder="Enter your contact">
                     
                 </div>
                 

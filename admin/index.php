@@ -222,7 +222,7 @@ while($res = mysqli_fetch_array($result1))
         <section class="content-header">
             <h1>
                 
-                <small>Welcome <?php echo "$username"; ?></small>
+                <small>Logged in as <?php echo "$username"; ?></small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
