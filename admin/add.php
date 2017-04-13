@@ -156,21 +156,7 @@ if(isset($_POST['register'])) {
                     </ul>
                 </li>
                 <!-- Notifications: style can be found in dropdown.less -->
-                <li class="dropdown notifications-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-warning"></i>
-                        <span class="label label-warning">0</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">You have 0 notifications</li>
-                        <li>
-                            <!-- inner menu: contains the actual data -->
-
-
-                        </li>
-                        <li class="footer"><a href="#">View all</a></li>
-                    </ul>
-                </li>
+                
                 <!-- Tasks: style can be found in dropdown.less -->
 
                 <!-- User Account: style can be found in dropdown.less -->
@@ -288,11 +274,11 @@ if(isset($_POST['register'])) {
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Home
-                <small>Control panel</small>
+                
+                <small>Logged in as <?php echo "$username"; ?></small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li class="active">Dashboard</li>
             </ol>
         </section>
