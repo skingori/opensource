@@ -273,9 +273,9 @@ while($res = mysqli_fetch_array($result1))
                     echo "<td class='active'>".$res['login_id']."</td>";
                     echo "<td>".$res['login_username']."</td>";
                     echo "<td>".$res['login_name']."</td>";
-                    //echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+                //echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
                 }
-                ?>
+            ?>
             </table>
 
         <!--********************Add content here *******************-->
