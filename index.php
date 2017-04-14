@@ -121,7 +121,7 @@ if (isset($_SESSION['rank'])!="" && isset($_SESSION['logname'])!="") {
                     <button type="submit" name="sign" class="btn bg-olive btn-block">Sign me in</button>
                     
                     
-                    <p><a href="#">I forgot my password</a></p>
+                    <!--<p><a href="#">I forgot my password</a></p>-->
                     
                     <a href="register.php" class="text-center">Register a new membership</a>
                 </div>
