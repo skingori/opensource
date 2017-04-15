@@ -142,19 +142,20 @@ while($res = mysqli_fetch_array($result1))
                         <!--<li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>-->
                     
                 </li>
-                 <li class="active">
-                        <!--<li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>-->
-                    <a href="../logout.php?logout"><i class="fa fa-lock"></i> Logout</a>
-                </li>
+
                 <li class="active">
                     <a href="feedback.php">
-                        <i class="fa fa-question"></i> <span>Suppliers</span>
+                        <i class="fa fa-shopping-cart"></i> <span>Suppliers</span>
                     </a>
                 </li>
                 <li class="active">
                     <a href="feedback.php">
                         <i class="fa fa-question"></i> <span>Feedback</span>
                     </a>
+                </li>
+                <li class="active">
+                    <!--<li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>-->
+                    <a href="../logout.php?logout"><i class="fa fa-lock"></i> Logout</a>
                 </li>
 
             </ul>
@@ -241,7 +242,7 @@ $products_item .= <<<EOT
 	<li class="product">
 	<form method="post" action="cart_update.php">
 	<div class="product-content"><h3>{$obj->product_name}</h3>
-	<div class="product-thumb"><img width='60' height='40' src="{$obj->product_image}"></div>
+	<div class="product-thumb"><a href="index.php?i={$obj->product_code}"><img width='60' height='50' src="{$obj->product_image}"></a></div>
 	<div class="product-desc">{$obj->product_desc}</div>
 	<div class="product-info">
 	Price {$currency}{$obj->product_price} 
