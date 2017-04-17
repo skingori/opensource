@@ -190,7 +190,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 if(isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"])>0)
 {
 	echo '<div class="cart-view-table-front" id="view-cart">';
-	echo '<H5>My Shopping Cart</5>';
+	echo '<H5 xmlns="http://www.w3.org/1999/html">My Shopping Cart</h5>';
 	echo '<form method="post" action="cart_update.php">';
 	echo '<table width="100%"  cellpadding="6" cellspacing="0">';
 	echo '<tbody>';
