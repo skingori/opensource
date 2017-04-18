@@ -118,6 +118,8 @@ while($res = mysqli_fetch_array($result))
     <!-- Theme style -->
     <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
 
+    <link href="../css/products.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/ratingstar.css" rel="stylesheet" type="text/css"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -130,7 +132,7 @@ while($res = mysqli_fetch_array($result))
 <header class="header">
     <a href="index.php" class="logo">
         <!-- Add the class icon to your logo image or logo icon to add the margining -->
-        IEBC MIS
+        <img src="../img/shop.png" height="45" width="45">
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -143,67 +145,16 @@ while($res = mysqli_fetch_array($result))
         </a>
         <div class="navbar-right">
             <ul class="nav navbar-nav">
-                <!-- Messages: style can be found in dropdown.less-->
-                <li class="dropdown messages-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-envelope"></i>
-                        <span class="label label-success">0</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">You have 0 messages</li>
-                        <li>
-                            <!-- inner menu: contains the actual data -->
 
-
-                        </li>
-                        <li class="footer"><a href="#">See All Messages</a></li>
-                    </ul>
-                </li>
-                <!-- Notifications: style can be found in dropdown.less -->
-                <li class="dropdown notifications-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa fa-warning"></i>
-                        <span class="label label-warning">0</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="header">You have 0 notifications</li>
-                        <li>
-                            <!-- inner menu: contains the actual data -->
-
-
-                        </li>
-                        <li class="footer"><a href="#">View all</a></li>
-                    </ul>
-                </li>
                 <!-- Tasks: style can be found in dropdown.less -->
 
                 <!-- User Account: style can be found in dropdown.less -->
-                <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <li class="active">
+                    <a href="../logout.php?logout" class="active">
                         <i class="glyphicon glyphicon-user"></i>
-                        <span><?php echo "$user_firstname&nbsp$user_lastname";?><i class="caret"></i></span>
+                        <span>Logout <?php echo "$name";?><i class="active"></i></span>
                     </a>
-                    <ul class="dropdown-menu">
-                        <!-- User image -->
-                        <li class="user-header bg-light-blue">
-                            <img src="../img/user.jpg" class="img-circle" alt="User Image" />
-                            <p>
-                                Loged in as <?php echo "$username"; ?>
-                                <small>Member since Nov. 2012</small>
-                            </p>
-                        </li>
-                        <!-- Menu Body -->
 
-                        <!-- Menu Footer-->
-                        <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="myprof.php" class="btn btn-default btn-flat">Profile</a>
-                            </div>
-                            <div class="pull-right">
-                                <a href="../logout.php?logout" class="btn btn-default btn-flat">Sign out</a>
-                            </div>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </div>
@@ -242,33 +193,21 @@ while($res = mysqli_fetch_array($result))
                         <i class="fa fa-dashboard"></i> <span>Home</span>
                     </a>
                 </li>
+                <li class="active">
+                    <a href="profile.php"><i class="fa fa-pencil-square"></i> Change Password</a>
+                    <!--<li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>-->
 
-
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-laptop"></i>
-                        <span>Settings</span>
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="news.php"><i class="fa fa-angle-double-right"></i> View news</a></li>
-                        <li><a href="mailbox.php"><i class="fa fa-angle-double-right"></i> Create Mail</a></li>
-                        <li><a href="mypay.php"><i class="fa fa-angle-double-right"></i> My payments</a></li>
-
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-edit"></i> <span>My Profile</span>
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="profile.php"><i class="fa fa-angle-double-right"></i> Change Password</a></li>
-                        <li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>
-                        <li><a href="../logout.php?logout"><i class="fa fa-angle-double-right"></i> Logout</a></li>
-                    </ul>
                 </li>
 
+                <li class="active">
+                    <a href="feedback.php">
+                        <i class="fa fa-question"></i> <span>Feedback</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <!--<li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>-->
+                    <a href="../logout.php?logout"><i class="fa fa-lock"></i> Logout</a>
+                </li>
 
             </ul>
         </section>
@@ -280,8 +219,7 @@ while($res = mysqli_fetch_array($result))
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Home
-                <small>Control panel</small>
+                <small>Shopping list</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
