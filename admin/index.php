@@ -379,7 +379,7 @@ while($res = mysqli_fetch_array($result1))
                                 <div class="icon">
                                     <i class="ion ion-android-mail"></a></i>
                                 </div>
-                                <a href="" class="small-box-footer">
+                                <a href="feedback.php" class="small-box-footer">
                                     More info <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
@@ -400,7 +400,7 @@ while($res = mysqli_fetch_array($result1))
                                 <div class="icon">
                                     <i class="ion ion-ios7-help"></a></i>
                                 </div>
-                                <a href="payments.php" class="small-box-footer">
+                                <a href="help.php" class="small-box-footer">
                                     More info <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
