@@ -52,17 +52,25 @@
                 <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+
+                        <?php
+                        $result = mysqli_query($con,"SELECT COUNT(1) FROM feedback_table ORDER BY feedback_id ASC");
+                        $row = mysqli_fetch_array($result);
+
+                        $total = $row[0];
+                        ?>
+
                         <i class="fa fa-envelope"></i>
-                        <span class="label label-success">0</span>
+                        <span class="label label-success"><?php echo "$total";?></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li class="header">You have 0 messages</li>
+                        <li class="header">You have <?php echo "$total";?> feedback</li>
                         <li>
                             <!-- inner menu: contains the actual data -->
 
 
                         </li>
-                        <li class="footer"><a href="#">See All Messages</a></li>
+                        <li class="footer"><a href="feedback.php">See All Feedback</a></li>
                     </ul>
                 </li>
                 <!-- Notifications: style can be found in dropdown.less -->
