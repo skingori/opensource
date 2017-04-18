@@ -40,9 +40,36 @@ require ('header.php');
 
 
 //add body
-echo 'Welcome to sams invention';
+//including the database connection file
+            include_once("../connection/db.php");
+
+            //fetching data in descending order (lastest entry first)
+            //$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
+            $result = mysqli_query($con, "SELECT * FROM supplier_product ORDER BY supplier_product_id ASC"); // using mysqli_query instead
+            ?>
+
+<table  border=0 cellpadding="1" cellspacing="1" id="" width="100%" class="table table-hover table-condensed table-striped">
+
+    <tr bgcolor=''>
+        <td>Supplier/Product ID</td>
+        <td>Supplier ID</td>
+        <td>Product ID</td>
+    </tr>
+    <?php
+    //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array
+    while($res = mysqli_fetch_array($result)) {
+        echo "<tr class=\"danger\">";
+        echo "<td class='active'>".$res['supplier_product_id']."</td>";
+        echo "<td>".$res['supplier_product_supplier_id']."</td>";
+        echo "<td>".$res['supplier_product_product_id']."</td>";
+        //echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+    }
+    ?>
+</table>
 
 
+
+<?php
 //add footer
 require('footer.php');
 
