@@ -163,14 +163,15 @@ while($res = mysqli_fetch_array($result1))
                         <!--<li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>-->
                     
                 </li>
-                 <li class="active">
-                        <!--<li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>-->
-                    <a href="../logout.php?logout"><i class="fa fa-lock"></i> Logout</a>
-                </li>
+
                 <li class="active">
                     <a href="feedback.php">
                         <i class="fa fa-question"></i> <span>Feedback</span>
                     </a>
+                </li>
+                <li class="active">
+                    <!--<li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>-->
+                    <a href="../logout.php?logout"><i class="fa fa-lock"></i> Logout</a>
                 </li>
 
             </ul>

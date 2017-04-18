@@ -103,7 +103,7 @@ while($res = mysqli_fetch_array($result1))
                     </ul>
                 </li>
                 <!-- Notifications: style can be found in dropdown.less -->
-                
+
                 <!-- Tasks: style can be found in dropdown.less -->
 
                 <!-- User Account: style can be found in dropdown.less -->
@@ -183,7 +183,7 @@ while($res = mysqli_fetch_array($result1))
                         <li><a href="add.php"><i class="fa fa-angle-double-right"></i> New Users</a></li>
                         <li><a href="supplier.php"><i class="fa fa-angle-double-right"></i> Add Supplier</a></li>
                     </ul>
-                    
+
                 </li>
                 <li class="treeview">
                     <a href="#">
@@ -197,7 +197,7 @@ while($res = mysqli_fetch_array($result1))
                         <li><a href="catego.php"><i class="fa fa-angle-double-right"></i> New Category</a></li>
 
                     </ul>
-                    
+
                 </li>
                 <li class="treeview">
                     <a href="#">
@@ -221,7 +221,7 @@ while($res = mysqli_fetch_array($result1))
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                
+
                 <small>Logged in as <?php echo "$username"; ?></small>
             </h1>
             <ol class="breadcrumb">
@@ -337,7 +337,7 @@ while($res = mysqli_fetch_array($result1))
                                 <div class="icon">
                                     <i class="ion ion-android-book"></a></i>
                                 </div>
-                                <a href="" class="small-box-footer">
+                                <a href="sup_prd.php" class="small-box-footer">
                                     More info <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>
