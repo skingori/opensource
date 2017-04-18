@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8adf9583-9e23-453b-bee5-449038f3c8ec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user/help.php" />
+    <list default="true" id="8adf9583-9e23-453b-bee5-449038f3c8ec" name="Default" comment="theme change">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/add.php" afterPath="$PROJECT_DIR$/admin/add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/header.php" afterPath="$PROJECT_DIR$/admin/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/index.php" afterPath="$PROJECT_DIR$/user/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -163,8 +158,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/user/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="156" column="37" lean-forward="false" selection-start-line="156" selection-start-column="37" selection-end-line="156" selection-end-column="37" />
+            <state relative-caret-position="200">
+              <caret line="148" column="24" lean-forward="true" selection-start-line="148" selection-start-column="24" selection-end-line="148" selection-end-column="24" />
               <folding>
                 <marker date="1492544515000" expanded="true" signature="537:595" ph="SELECT * FRO... login_table" />
                 <marker date="1492544515000" expanded="true" signature="9034:9155" ph="SELECT produ... products_table" />
@@ -597,7 +592,7 @@
       <workItem from="1492192047293" duration="5129000" />
       <workItem from="1492251179197" duration="1185000" />
       <workItem from="1492412695884" duration="10838000" />
-      <workItem from="1492537731477" duration="5244000" />
+      <workItem from="1492537731477" duration="5292000" />
     </task>
     <task id="LOCAL-00001" summary="few changes">
       <created>1492108681496</created>
@@ -718,11 +713,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492542289874</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="theme change">
+      <created>1492544698760</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1492544698760</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36858000" />
+    <option name="totallyTimeSpent" value="36906000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1334,8 +1336,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="156" column="37" lean-forward="false" selection-start-line="156" selection-start-column="37" selection-end-line="156" selection-end-column="37" />
+        <state relative-caret-position="200">
+          <caret line="148" column="24" lean-forward="true" selection-start-line="148" selection-start-column="24" selection-end-line="148" selection-end-column="24" />
           <folding>
             <marker date="1492544515000" expanded="true" signature="537:595" ph="SELECT * FRO... login_table" />
             <marker date="1492544515000" expanded="true" signature="9034:9155" ph="SELECT produ... products_table" />
