@@ -31,13 +31,33 @@ $result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$
 while($res = mysqli_fetch_array($result1))
 {
     $name= $res['login_name'];
+    $lid=$res['login_id'];
 
 }
 
 ?>
+<?php
+
+require '../connection/db.php';
+
+if (isset($_POST['update'])) {
+    $feedback_product_id_=$_POST['feedback_product_id'];
+    $feedback_ratings_=$_POST['group-1'];
+    $feedback_user_id_=$lid;
+    $feedback_user_contact_=$_POST['feedback_user_contact'];
+    mysqli_query($con,"INSERT INTO feedback_table (feedback_product_id,feedback_ratings,feedback_user_id,feedback_user_contact)
+      VALUES ('$feedback_product_id_','$feedback_ratings_','$feedback_user_id_','$feedback_user_contact_')
+      ") or die(mysql_error());
+
+    $msg = "<div class='alert alert-info'>
+						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; Thank you for your feedback !
+					</div>";
+    echo '<meta content="2;" http-equiv="refresh" />';
+
+}
 
 
-
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,8 +82,9 @@ while($res = mysqli_fetch_array($result1))
     <link href="../css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="../css/AdminLTE.css" rel="stylesheet" type="text/css" />
-    
+
     <link href="../css/products.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/ratingstar.css" rel="stylesheet" type="text/css"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -89,7 +110,7 @@ while($res = mysqli_fetch_array($result1))
         </a>
         <div class="navbar-right">
             <ul class="nav navbar-nav">
-                
+
                 <!-- Tasks: style can be found in dropdown.less -->
 
                 <!-- User Account: style can be found in dropdown.less -->
@@ -98,7 +119,7 @@ while($res = mysqli_fetch_array($result1))
                         <i class="glyphicon glyphicon-user"></i>
                         <span>Logout <?php echo "$name";?><i class="active"></i></span>
                     </a>
-                  
+
                 </li>
             </ul>
         </div>
@@ -139,23 +160,13 @@ while($res = mysqli_fetch_array($result1))
                 </li>
                 <li class="active">
                     <a href="profile.php"><i class="fa fa-pencil-square"></i> Change Password</a>
-                        <!--<li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>-->
-                    
+                    <!--<li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>-->
+
                 </li>
 
-                <!--<li class="active">
-                    <a href="feedback.php">
-                        <i class="fa fa-shopping-cart"></i> <span>Suppliers</span>
-                    </a>
-                </li>-->
                 <li class="active">
                     <a href="feedback.php">
                         <i class="fa fa-question"></i> <span>Feedback</span>
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="help.php">
-                        <i class="fa ion-ios7-help-outline"></i> <span>Help</span>
                     </a>
                 </li>
                 <li class="active">
@@ -182,100 +193,36 @@ while($res = mysqli_fetch_array($result1))
         </section>
 
         <!-- Main content -->
-        <section class="">
+        <section class="content">
             <!--********************Add content here *******************-->
-
-<!-- View Cart Box Start -->
-<?php
-session_start();
-include_once("../connection/config.php");
-//current URL of the Page. cart_update.php redirects back to this URL
-$current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-
-if(isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"])>0)
-{
-	echo '<div class="cart-view-table-front" id="view-cart">';
-	echo '<H5 xmlns="http://www.w3.org/1999/html">My Shopping Cart</h5>';
-	echo '<form method="post" action="cart_update.php">';
-	echo '<table width="100%"  cellpadding="6" cellspacing="0">';
-	echo '<tbody>';
-
-	$total =0;
-	$b = 0;
-	foreach ($_SESSION["cart_products"] as $cart_itm)
-	{
-		$product_name = $cart_itm["product_name"];
-		$product_qty = $cart_itm["product_qty"];
-		$product_price = $cart_itm["product_price"];
-		$product_code = $cart_itm["product_code"];
-		//$product_color = $cart_itm["product_color"];
-		$bg_color = ($b++%2==1) ? 'odd' : 'even'; //zebra stripe
-		echo '<tr class="'.$bg_color.'">';
-		echo '<td>Qty <input type="text" size="2" maxlength="2" name="product_qty['.$product_code.']" value="'.$product_qty.'" /></td>';
-		echo '<td>'.$product_name.'</td>';
-		echo '<td><input type="checkbox" name="remove_code[]" value="'.$product_code.'" /> Remove</td>';
-		echo '</tr>';
-		$subtotal = ($product_price * $product_qty);
-		$total = ($total + $subtotal);
-	}
-	echo '<td colspan="4">';
-	echo '<button type="submit">Update</button><a href="view_cart.php" class="button">Checkout</a>';
-	echo '</td>';
-	echo '</tbody>';
-	echo '</table>';
-	
-	$current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-	echo '<input type="hidden" name="return_url" value="'.$current_url.'" />';
-	echo '</form>';
-	echo '</div>';
-
-}
-?>
-<!-- View Cart Box End -->
+            <ol>
+                <li>FAQ</li>
+                <ul >
+                    <h4><b>Where Can I Find Out More About Problems I May Face as an Online Consumer?</b></h4>
 
 
-<!-- Products List Start -->
-<?php
+                    <li>Does the federal government have any information about online shopping?</li>
+                    <li>Are there any non-profit organizations offering consumer advice on the Web?</li>
+                    <li>What can I do to avoid scams and fraud online?</li>
+                    <li>What can I do if I am the victim of fraud?</li>
 
-$results = $mysqli->query("SELECT product_code, product_name, product_desc, product_image, product_price FROM products_table ORDER BY product_id ASC");
-if($results){ 
-$products_item = '<ul class="products">';
-//fetch results set as object and output HTML
-while($obj = $results->fetch_object())
-{
-$products_item .= <<<EOT
-	<li class="product">
-	<form method="post" action="cart_update.php">
-	<div class="product-content"><h3>{$obj->product_name}</h3>
-	<div class="product-thumb"><a href="suppliers.php?x={$obj->product_code}"><img width='60' height='50' src="{$obj->product_image}"></a></div>
-	<div class="product-desc">{$obj->product_desc}</div>
-	<div class="product-info">
-	Price {$currency}{$obj->product_price} 
-	
-	<fieldset>
-	
-	
-	<label>
-		<span>Quantity</span>
-		<input type="text" size="2" maxlength="2" name="product_qty" value="1" />
-	</label>
-	
-	</fieldset>
-	<input type="hidden" name="product_code" value="{$obj->product_code}" />
-	<input type="hidden" name="type" value="add" />
-	<input type="hidden" name="return_url" value="{$current_url}" />
-	<div align="center"><button type="submit" class="add_to_cart">Add</button></div>
-	</div></div>
-	</form>
-	</li>
-EOT;
-}
-$products_item .= '</ul>';
-echo $products_item;
-}
-?>    
+                </ul>
 
-        
+                <br>
+
+                <ul>
+                    <h4><b>What About Returning a Product?</b></h4>
+
+                    <li>How can I return a </li>
+                    <li>How can I discover a store's policy on returns?</li>
+                    <li>What's the usual method of returning a product to an online store?</li>
+                    <li>Why was my return rejected?</li>
+                    <li>When do I get the credit?</li>
+                </ul>
+
+                <li><a href="">HELP?</a></li>
+
+            </ol>
             <!--********************Add content here *******************-->
         </section><!-- /.content -->
     </aside><!-- /.right-side -->
@@ -317,6 +264,8 @@ echo $products_item;
 
 </body>
 </html>
+
+
 
 
 
