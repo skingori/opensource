@@ -175,7 +175,7 @@ while($res = mysqli_fetch_array($result2))
 
     <!-- Right side column. Contains the navbar and content of the page -->
     <aside class="right-side">
-        <!-- Content Header (Page header) -->
+        <!-- Content Header (Page header)
         <section class="content-header">
             <h1>
                 <small>Shopping list</small>
@@ -184,7 +184,7 @@ while($res = mysqli_fetch_array($result2))
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li class="active">Dashboard</li>
             </ol>
-        </section>
+        </section>-->
 
         <!-- Main content -->
         <section class="content">

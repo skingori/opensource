@@ -36,6 +36,52 @@ while($res = mysqli_fetch_array($result1))
 
 ?>
 
+<?php
+session_start();
+include_once("../connection/config.php");
+//current URL of the Page. cart_update.php redirects back to this URL
+$current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+
+if(isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"])>0)
+{
+    echo '<div class="cart-view-table-front" id="view-cart" hidden="">';
+    echo '<H5 xmlns="http://www.w3.org/1999/html">My Shopping Cart</h5>';
+    echo '<form method="post" action="cart_update.php">';
+    echo '<table width="100%"  cellpadding="1" cellspacing="0">';
+    echo '<tbody>';
+
+    $total =0;
+    $b = 0;
+    foreach ($_SESSION["cart_products"] as $cart_itm)
+    {
+        $product_name = $cart_itm["product_name"];
+        $product_qty = $cart_itm["product_qty"];
+        $product_price = $cart_itm["product_price"];
+        $product_code = $cart_itm["product_code"];
+        //$product_color = $cart_itm["product_color"];
+        $bg_color = ($b++%2==1) ? 'odd' : 'even'; //zebra stripe
+        echo '<tr class="'.$bg_color.'">';
+        echo '<td>Qty <input type="text" size="2" maxlength="2" name="product_qty['.$product_code.']" value="'.$product_qty.'" /></td>';
+        echo '<td>'.$product_name.'</td>';
+        echo '<td><input type="checkbox" name="remove_code[]" value="'.$product_code.'" /> Remove</td>';
+        echo '</tr>';
+        $subtotal = ($product_price * $product_qty);
+        $total = ($total + $subtotal);
+    }
+    echo '<td colspan="4">';
+    echo '<button type="submit">Update</button><a href="view_cart.php" class="button">Checkout</a>';
+    echo '</td>';
+    echo '</tbody>';
+    echo '</table>';
+
+    $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+    echo '<input type="hidden" name="return_url" value="'.$current_url.'" />';
+    echo '</form>';
+    echo '</div>';
+
+}
+?>
+
 
 
 <!DOCTYPE html>
@@ -93,6 +139,13 @@ while($res = mysqli_fetch_array($result1))
                 <!-- Tasks: style can be found in dropdown.less -->
 
                 <!-- User Account: style can be found in dropdown.less -->
+                <li class="active">
+                    <a href="view_cart.php" class="active">
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                        <span class="label label-success"><?php echo "$b";?></span>
+                    </a>
+
+                </li>
                 <li class="active">
                     <a href="../logout.php?logout" class="active">
                         <i class="glyphicon glyphicon-user"></i>
@@ -170,69 +223,11 @@ while($res = mysqli_fetch_array($result1))
 
     <!-- Right side column. Contains the navbar and content of the page -->
     <aside class="right-side">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <h1>
-                <small>Shopping list</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
-            </ol>
-        </section>
 
-        <!-- Main content -->
-        <section class="">
             <!--********************Add content here *******************-->
 
 <!-- View Cart Box Start -->
-<?php
-session_start();
-include_once("../connection/config.php");
-//current URL of the Page. cart_update.php redirects back to this URL
-$current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-
-if(isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"])>0)
-{
-	echo '<div class="cart-view-table-front" id="view-cart">';
-	echo '<H5 xmlns="http://www.w3.org/1999/html">My Shopping Cart</h5>';
-	echo '<form method="post" action="cart_update.php">';
-	echo '<table width="100%"  cellpadding="6" cellspacing="0">';
-	echo '<tbody>';
-
-	$total =0;
-	$b = 0;
-	foreach ($_SESSION["cart_products"] as $cart_itm)
-	{
-		$product_name = $cart_itm["product_name"];
-		$product_qty = $cart_itm["product_qty"];
-		$product_price = $cart_itm["product_price"];
-		$product_code = $cart_itm["product_code"];
-		//$product_color = $cart_itm["product_color"];
-		$bg_color = ($b++%2==1) ? 'odd' : 'even'; //zebra stripe
-		echo '<tr class="'.$bg_color.'">';
-		echo '<td>Qty <input type="text" size="2" maxlength="2" name="product_qty['.$product_code.']" value="'.$product_qty.'" /></td>';
-		echo '<td>'.$product_name.'</td>';
-		echo '<td><input type="checkbox" name="remove_code[]" value="'.$product_code.'" /> Remove</td>';
-		echo '</tr>';
-		$subtotal = ($product_price * $product_qty);
-		$total = ($total + $subtotal);
-	}
-	echo '<td colspan="4">';
-	echo '<button type="submit">Update</button><a href="view_cart.php" class="button">Checkout</a>';
-	echo '</td>';
-	echo '</tbody>';
-	echo '</table>';
-	
-	$current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
-	echo '<input type="hidden" name="return_url" value="'.$current_url.'" />';
-	echo '</form>';
-	echo '</div>';
-
-}
-?>
 <!-- View Cart Box End -->
-
 
 <!-- Products List Start -->
 <?php
@@ -247,7 +242,7 @@ $products_item .= <<<EOT
 	<li class="product">
 	<form method="post" action="cart_update.php">
 	<div class="product-content"><h3>{$obj->product_name}</h3>
-	<div class="product-thumb"><a href="suppliers.php?x={$obj->product_code}"><img width='60' height='50' src="{$obj->product_image}"></a></div>
+	<div class="product-thumb"><a href="suppliers.php?x={$obj->product_code}"><img width='80' height='55' src="{$obj->product_image}"></a></div>
 	<div class="product-desc">{$obj->product_desc}</div>
 	<div class="product-info">
 	Price {$currency}{$obj->product_price} 

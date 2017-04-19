@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : Apr 11, 2017, 4:07:56 PM
     Author     : king
 */
@@ -13,14 +13,14 @@ body{
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 h1, h2, h3{
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;	
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
 ul.products {
 	padding: 0;
 	margin: 0;
-	max-width: 800px;
-	margin-left: 0px;
+	max-width: 100%;
+	margin-left: 1px;
 	margin-right: auto;
 }
 ul.products li {
@@ -29,7 +29,7 @@ ul.products li {
 	padding: 10px;
 	background-color: #FFFFFF;
 	margin: 10px;
-	border: 1px solid #EAEAEA;  
+	border: 1px solid #EAEAEA;
 	color: #3D3D3D;
 }
 ul.products li h3 {
@@ -85,7 +85,7 @@ button:hover, .button:hover{
 	font-size: 0.8em;
 	margin-bottom: 4px;
 	height: 40px;
-        width: 90px;
+	width: 90px;
 	overflow: hidden;
 	margin-top: 5px;
 }
@@ -133,7 +133,7 @@ ul.shopping-cart .cart-itm .remove-itm a{
 	text-align: center;
 	padding: 0;
 	margin: 0px 0px 6px 0px;
-        
+
 }
 .cart-view-table-front, .cart-view-table-back {
 	max-width: 700px;

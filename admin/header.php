@@ -189,17 +189,17 @@
 
     <!-- Right side column. Contains the navbar and content of the page -->
     <aside class="right-side">
-        <!-- Content Header (Page header) -->
+        <!-- Content Header (Page header)
         <section class="content-header">
             <h1>
 
-                <small>Logged in as <?php echo "$username"; ?></small>
+                <small>Logged in as <?php //echo "$username"; ?></small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="index.php"><i class="fa fa-dashboard"></i> Home</a></li>
                 <li class="active">Dashboard</li>
             </ol>
-        </section>
+        </section>-->
 
         <!-- Main content -->
         <section class="content">
