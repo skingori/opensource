@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8adf9583-9e23-453b-bee5-449038f3c8ec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/sshop.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/purchases.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user/mpesa.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user/pay.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/shop.png" afterPath="$PROJECT_DIR$/img/shop.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6cda3f58-3900-451a-b825-9f68d4480be7.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/6cda3f58-3900-451a-b825-9f68d4480be7.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/addpd.php" afterPath="$PROJECT_DIR$/admin/addpd.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/categ.php" afterPath="$PROJECT_DIR$/admin/categ.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/catego.php" afterPath="$PROJECT_DIR$/admin/catego.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/crud.php" afterPath="$PROJECT_DIR$/admin/crud.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/edit.php" afterPath="$PROJECT_DIR$/admin/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/header.php" afterPath="$PROJECT_DIR$/admin/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/prod.php" afterPath="$PROJECT_DIR$/admin/prod.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/profile.php" afterPath="$PROJECT_DIR$/admin/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/sup_pro.php" afterPath="$PROJECT_DIR$/admin/sup_pro.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/suppl.php" afterPath="$PROJECT_DIR$/admin/suppl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/users.php" afterPath="$PROJECT_DIR$/admin/users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/products.css" afterPath="$PROJECT_DIR$/css/products.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/feedback.php" afterPath="$PROJECT_DIR$/user/feedback.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/help.php" afterPath="$PROJECT_DIR$/user/help.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/index.php" afterPath="$PROJECT_DIR$/user/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/profile.php" afterPath="$PROJECT_DIR$/user/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/suppliers.php" afterPath="$PROJECT_DIR$/user/suppliers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/view_cart.php" afterPath="$PROJECT_DIR$/user/view_cart.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -569,7 +544,7 @@
       <workItem from="1492412695884" duration="10838000" />
       <workItem from="1492537731477" duration="6787000" />
       <workItem from="1492588156512" duration="2634000" />
-      <workItem from="1492597336521" duration="18955000" />
+      <workItem from="1492597336521" duration="19063000" />
     </task>
     <task id="LOCAL-00001" summary="few changes">
       <created>1492108681496</created>
@@ -704,11 +679,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492544745858</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="System done">
+      <created>1492624504216</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1492624504216</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59990000" />
+    <option name="totallyTimeSpent" value="60098000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -721,7 +703,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="716" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14781906" sideWeight="0.4917647" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -730,7 +711,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31170887" sideWeight="0.47415185" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31089744" sideWeight="0.47415185" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11793215" sideWeight="0.5082353" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39903846" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -781,7 +762,8 @@
     <MESSAGE value="black theme" />
     <MESSAGE value="supplier product" />
     <MESSAGE value="theme change" />
-    <option name="LAST_COMMIT_MESSAGE" value="theme change" />
+    <MESSAGE value="System done" />
+    <option name="LAST_COMMIT_MESSAGE" value="System done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
