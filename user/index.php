@@ -17,6 +17,9 @@ if (isset($_SESSION['logname']) && isset($_SESSION['rank'])) {
             break;
 
     }
+
+}elseif(!isset($_SESSION['logname']) && !isset($_SESSION['rank'])){
+    header('Location:../sessions.php');
 }
 else
 {
