@@ -47,7 +47,7 @@ $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_
 
 if(isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"])>0)
 {
-    echo '<div class="cart-view-table-front" id="view-cart" hidden="">';
+    echo '<div class="cart-view-table-front" id="view-cart" >';
     echo '<H5 xmlns="http://www.w3.org/1999/html">My Shopping Cart</h5>';
     echo '<form method="post" action="cart_update.php">';
     echo '<table width="100%"  cellpadding="1" cellspacing="0">';
@@ -61,10 +61,12 @@ if(isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"])>0)
         $product_qty = $cart_itm["product_qty"];
         $product_price = $cart_itm["product_price"];
         $product_code = $cart_itm["product_code"];
+        $product_quantity = $cart_itm["product_quantity"];
         //$product_color = $cart_itm["product_color"];
         $bg_color = ($b++%2==1) ? 'odd' : 'even'; //zebra stripe
         echo '<tr class="'.$bg_color.'">';
         echo '<td>Qty <input type="text" size="2" maxlength="2" name="product_qty['.$product_code.']" value="'.$product_qty.'" /></td>';
+        echo '<td>'.$product_quantity.'</td>';
         echo '<td>'.$product_name.'</td>';
         echo '<td><input type="checkbox" name="remove_code[]" value="'.$product_code.'" /> Remove</td>';
         echo '</tr>';
@@ -235,7 +237,7 @@ if(isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"])>0)
 <!-- Products List Start -->
 <?php
 
-$results = $mysqli->query("SELECT product_code, product_name, product_desc, product_image, product_price FROM products_table ORDER BY product_id ASC");
+$results = $mysqli->query("SELECT product_code, product_name, product_desc, product_image, product_price,product_quantity FROM products_table ORDER BY product_id ASC");
 if($results){ 
 $products_item = '<ul class="products">';
 //fetch results set as object and output HTML
@@ -247,15 +249,15 @@ $products_item .= <<<EOT
 	<div class="product-content"><h3>{$obj->product_name}</h3>
 	<div class="product-thumb"><a href="suppliers.php?x={$obj->product_code}"><img width='80' height='55' src="{$obj->product_image}"></a></div>
 	<div class="product-desc">{$obj->product_desc}</div>
-	<div class="product-info">
-	Price {$currency}{$obj->product_price} 
+	<div class="product-info">Price {$currency}{$obj->product_price}
 	
 	<fieldset>
 	
 	
 	<label>
 		<span>Quantity</span>
-		<input type="text" size="2" maxlength="2" name="product_qty" value="1" />
+		<input type="text" size="2" maxlength="2" name="product_qty" value="1" /><br>
+		<small>Available :{$obj->product_quantity}</small>
 	</label>
 	
 	</fieldset>
