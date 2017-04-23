@@ -47,8 +47,11 @@ include_once("../connection/db.php");
 //$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
 $result = mysqli_query($con, "SELECT * FROM purchase_table ORDER BY purchase_id ASC"); // using mysqli_query instead
 ?>
-
-    <table  border=0 cellpadding="1" cellspacing="1" id="" width="100%" class="table table-hover table-condensed table-striped">
+    <span class="input-group-btn">
+        <button type='submit' name='search' id='print' onclick="printData();" class="btn btn-flat btn-default "><i class="fa fa-print"></i></button>&nbsp;
+        <button type='submit' name='search' id='print' onclick="printData();" class="btn btn-flat btn-default "><i class="fa fa-file"></i></button>
+        </span>
+    <table  border=0 cellpadding="1" cellspacing="1" id="table1" width="100%" class="table table-hover table-condensed table-bordered table-striped">
 
         <tr bgcolor=''>
             <td>Total Quantity</td>
@@ -56,18 +59,20 @@ $result = mysqli_query($con, "SELECT * FROM purchase_table ORDER BY purchase_id 
             <td>Purchase Date</td>
             <td>Total Cost</td>
             <td>Customer Name</td>
+            <td></td>
 
         </tr>
         <?php
         //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array
         while($res = mysqli_fetch_array($result)) {
-            echo "<tr class=\"danger\">";
-            echo "<td class='active'>".$res['purchase_product_quantity']."</td>";
+            echo "<tr class=\"alert-info\">";
+            echo "<td class=''>".$res['purchase_product_quantity']."</td>";
             echo "<td>".$res['purchase_payment_method']."</td>";
+            echo "<td hidden>".$res['purchase_id']."</td>";
             echo "<td>".$res['purchase_date']."</td>";
             echo "<td>".$res['purchase_total']."</td>";
             echo "<td>".$res['purchase_by']."</td>";
-            //echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a></td>";
+            echo "<td><a href=\"delete.php?pur=$res[purchase_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o'></a></td>";
         }
         ?>
     </table>

@@ -31,6 +31,7 @@ $result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$
 while($res = mysqli_fetch_array($result1))
 {
     $name= $res['login_name'];
+    $id=$res['id'];
 
 }
 /**
@@ -44,52 +45,16 @@ include_once("../connection/db.php");
 
 if(isset($_POST['update']))
 {
+    $xname_=($_POST['login_name']);
+    //updating the table
 
-    $id_ = mysqli_real_escape_string($con, $_POST['id']);
+    $result = mysqli_query($con, "UPDATE login_table SET login_name='$xname_' WHERE id=$id");
 
-    $user_firstname = mysqli_real_escape_string($con, $_POST['fname']);
-    $user_lastname = mysqli_real_escape_string($con, $_POST['lname']);
-    $user_payrollnumber = mysqli_real_escape_string($con, $_POST['pnumber']);
-    $user_email_ = mysqli_real_escape_string($con, $_POST['email']);
-    $user_phone = mysqli_real_escape_string($con, $_POST['phone']);
-
-    // checking empty fields
-    if(empty($user_firstname) || empty($user_payrollnumber ) || empty($user_email_)) {
-
-        if(empty($user_firstname)) {
-            echo "<font color='red'>Name field is empty.</font><br/>";
-        }
-
-        if(empty($user_payrollnumber)) {
-            echo "<font color='red'>Age field is empty.</font><br/>";
-        }
-
-        if(empty($user_email_)) {
-            echo "<font color='red'>Email field is empty.</font><br/>";
-        }
-    } else {
-        //updating the table
-        $result = mysqli_query($con, "UPDATE user_details SET user_firstname='$user_firstname',user_lastname='$user_lastname',user_payrollnumber='$user_payrollnumber' , user_email='$user_email_',user_phone='$user_phone' WHERE id=$id_");
-
-        //redirectig to the display page. In our case, it is index.php
-        header("Location: index.php");
-    }
+    //redirectig to the display page. In our case, it is index.php
+    header("Location: index.php");
 }
 ?>
-<?php
-//selecting data associated with this particular id
-$result = mysqli_query($con, "SELECT * FROM user_details WHERE user_username='$username'");
 
-while($res = mysqli_fetch_array($result))
-{
-    $id= $res['id'];
-    $user_firstname = $res['user_firstname'];
-    $user_lastname= $res['user_lastname'];
-    $user_payrollnumber = $res['user_payrollnumber'];
-    $user_email = $res['user_email'];
-    $user_phone = $res['user_phone'];
-}
-?>
 <!-- add content here -->
 <?php
 //add header
@@ -107,19 +72,8 @@ include ('header.php');
         <input type="text" name="id" required class="form-control" value=<?php echo $id;?> />
     </div>
     <div class="form-group">
-        <input type="text" name="fname" value="<?php echo $user_firstname;?>" required class="form-control" placeholder="firstname"/>
-    </div>
-    <div class="form-group">
-        <input type="text" name="lname" required value="<?php echo $user_lastname;?>" class="form-control" placeholder="lastname"/>
-    </div>
-    <div class="form-group">
-        <input type="text" name="pnumber" required value="<?php echo $user_payrollnumber;?>" class="form-control" placeholder="Employee Number"/>
-    </div>
-    <div class="form-group">
-        <input type="email" name="email" required value="<?php echo $user_email;?>" class="form-control" placeholder="Email"/>
-    </div>
-    <div class="form-group">
-        <input type="text" name="phone" required value="<?php echo $user_phone;?>" class="form-control" placeholder="Mobile Number"/>
+        <label>Name:</label>
+        <input type="text" name="login_name" value="<?php echo $name;?>" required class="form-control" placeholder="firstname"/>
     </div>
 
     <!--</div>-->

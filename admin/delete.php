@@ -1,22 +1,49 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: king
- * Date: 02/04/2017
- * Time: 00:07
- */
+
+include '../connection/db.php';
+
+if (isset($_GET['usd'])) {
+
+    $con = mysqli_query($con, "DELETE FROM login_table WHERE login_id='".($_GET['usd'])."'");
+
+    header("Location:users.php");
+}
 
 
-//including the database connection file
-include("../connection/db.php");
+elseif (isset($_GET['cat'])){
+    $con = mysqli_query($con, "DELETE FROM category_table WHERE category_id='".($_GET['cat'])."'");
 
-//getting id of the data from url
-$id = $_GET['id'];
+    header("Location:categ.php");
 
-//deleting the row from table
-$result = mysqli_query($con, "DELETE FROM user_details WHERE id=$id");
-//$result = mysqli_query($con, "DELETE FROM login_table WHERE login_username=$id");
+}
+elseif (isset($_GET['prod'])){
+    $con = mysqli_query($con, "DELETE FROM products_table WHERE product_code='".($_GET['prod'])."'");
 
-//redirecting to the display page (index.php in our case)
-header("Location:crud.php");
-?>
+    header("Location:prod.php");
+
+}
+elseif (isset($_GET['sup'])){
+    $con = mysqli_query($con, "DELETE FROM supplier_table WHERE supplier_id='".($_GET['sup'])."'");
+
+    header("Location:suppl.php");
+
+}
+elseif (isset($_GET['sup1'])){
+    $con = mysqli_query($con, "DELETE FROM supplier_product WHERE supplier_product_id='".($_GET['sup1'])."'");
+
+    header("Location:sup_prd.php");
+
+}
+elseif (isset($_GET['pur'])){
+    $con = mysqli_query($con, "DELETE FROM purchase_table WHERE purchase_id='".($_GET['pur'])."'");
+
+    header("Location:purchases.php");
+
+}
+elseif (isset($_GET['fed'])){
+    $con = mysqli_query($con, "DELETE FROM feedback_table WHERE feedback_id='".($_GET['fed'])."'");
+
+    header("Location:feedback.php");
+
+}
+

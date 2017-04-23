@@ -215,8 +215,8 @@ while($res = mysqli_fetch_array($result1))
 <!-- end of pannel one -->
 
                         <section class="content">
-                            <!--********************Add content here *******************-->
-                            
+    <!--********************Add content here *******************-->
+
 
                             <!--********************Add content here *******************-->
                         </section>
