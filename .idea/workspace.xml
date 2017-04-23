@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8adf9583-9e23-453b-bee5-449038f3c8ec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user/f.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/user/supplier.php" afterPath="$PROJECT_DIR$/user/h.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/shop.png" afterPath="$PROJECT_DIR$/img/shop.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/categ.php" afterPath="$PROJECT_DIR$/admin/categ.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/catego.php" afterPath="$PROJECT_DIR$/admin/catego.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/delete.php" afterPath="$PROJECT_DIR$/admin/delete.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/feedback.php" afterPath="$PROJECT_DIR$/admin/feedback.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/footer.php" afterPath="$PROJECT_DIR$/admin/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/header.php" afterPath="$PROJECT_DIR$/admin/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/myprof.php" afterPath="$PROJECT_DIR$/admin/myprof.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/prod.php" afterPath="$PROJECT_DIR$/admin/prod.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/purchases.php" afterPath="$PROJECT_DIR$/admin/purchases.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/sup_prd.php" afterPath="$PROJECT_DIR$/admin/sup_prd.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/suppl.php" afterPath="$PROJECT_DIR$/admin/suppl.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/users.php" afterPath="$PROJECT_DIR$/admin/users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logout.php" afterPath="$PROJECT_DIR$/logout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/feedback.php" afterPath="$PROJECT_DIR$/user/feedback.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/help.php" afterPath="$PROJECT_DIR$/user/help.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/index.php" afterPath="$PROJECT_DIR$/user/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/myprof.php" afterPath="$PROJECT_DIR$/user/myprof.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/pay.php" afterPath="$PROJECT_DIR$/user/pay.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/profile.php" afterPath="$PROJECT_DIR$/user/profile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/suppliers.php" afterPath="$PROJECT_DIR$/user/suppliers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user/view_cart.php" afterPath="$PROJECT_DIR$/user/view_cart.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -682,7 +657,7 @@
       <workItem from="1492782296436" duration="317000" />
       <workItem from="1492843422954" duration="6423000" />
       <workItem from="1492949047291" duration="10019000" />
-      <workItem from="1492973792515" duration="4987000" />
+      <workItem from="1492973792515" duration="5012000" />
     </task>
     <task id="LOCAL-00001" summary="few changes">
       <created>1492108681496</created>
@@ -845,11 +820,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492686775464</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="able to delete">
+      <created>1492980220436</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1492980220436</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98785000" />
+    <option name="totallyTimeSpent" value="98810000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -944,7 +926,8 @@
     <MESSAGE value="theme change" />
     <MESSAGE value="System done" />
     <MESSAGE value="session couldn't handle redirects" />
-    <option name="LAST_COMMIT_MESSAGE" value="session couldn't handle redirects" />
+    <MESSAGE value="able to delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="able to delete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1038,6 +1021,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
