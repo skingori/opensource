@@ -12,7 +12,7 @@ $taxes              = array( //List your Taxes percent here.
                             'VAT' => 19, 
                             'Service Tax' => 5
                             );						
-//connect to MySql						
+//connect to iMySql
 $mysqli = new mysqli($db_host, $db_username, $db_password,$db_name,$db_port);						
 if ($mysqli->connect_error) {
     die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);

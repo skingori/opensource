@@ -36,7 +36,7 @@
 <header class="header">
     <a href="index.php" class="logo">
         <!-- Add the class icon to your logo image or logo icon to add the margining -->
-        <img src="../img/shop.png" height="45" width="45">
+        <img src="../img/shop.png" height="45" width="65">
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -165,7 +165,7 @@
                     <ul class="treeview-menu">
                         <li><a href="addpd.php"><i class="fa fa-angle-double-right"></i> Add Products</a></li>
                         <li><a href="sup_pro.php"><i class="fa fa-angle-double-right"></i> Supplier/Product</a></li>
-                        <li><a href="catego.php"><i class="fa fa-angle-double-right"></i> New Category</a></li>
+                        <li><a href="catego.php?add"><i class="fa fa-angle-double-right"></i> New Category</a></li>
 
                     </ul>
 

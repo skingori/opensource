@@ -1,33 +1,15 @@
-
-</section>
-
-<!-- end of pannel two -->
-
-</div><!-- /.row -->
-
-<!-- top row -->
-
-</div><!-- /.row (main row) -->
-
 </section><!-- /.content -->
 </aside><!-- /.right-side -->
 </div><!-- ./wrapper -->
 
-<footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-        version 2.0
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2017 <a href="http://tarclink.com">tarclink</a>.</strong> All rights reserved.
-</footer>
-
 <!-- add new calendar event modal -->
+
+
 <!-- jQuery 2.0.2 -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-<!-- jQuery UI 1.10.3 -->
+<!-- jQuery UI 1.10.3
 <script src="../js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
-<!-- Bootstrap -->
+<!-- Bootstrap
 <script src="../js/bootstrap.min.js" type="text/javascript"></script>
 <!-- Morris.js charts -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
@@ -53,19 +35,12 @@
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../js/AdminLTE/dashboard.js" type="text/javascript"></script>
-
 <script>
-    function printData()
-    {
-        var divToPrint=document.getElementById("table1");
-        newWin= window.open("");
-        newWin.document.write(divToPrint.outerHTML);
-        newWin.print();
-        newWin.close();
-    }
-
+    <!--<progress value="0" max="10" id="progressBar"></progress>-->
+    var timeleft = 10;
+    var downloadTimer = setInterval(function(){
+        document.getElementById("progressBar").value = 10 - --timeleft;
+        if(timeleft <= 0)
+            clearInterval(downloadTimer);
+    },1000);
 </script>
-
-
-</body>
-</html>
