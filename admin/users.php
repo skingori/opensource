@@ -45,7 +45,7 @@ while($res = mysqli_fetch_array($result1))
 
             //fetching data in descending order (lastest entry first)
             //$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
-            $result = mysqli_query($con, "SELECT * FROM login_table ORDER BY id DESC"); // using mysqli_query instead
+            $result = mysqli_query($con, "SELECT * FROM login_table WHERE login_username <>'$username'"); // using mysqli_query instead
             ?>
         <span class="input-group-btn">
         <button type='submit' name='search' id='print' onclick="printData();" class="btn btn-flat btn-default "><i class="fa fa-print"></i></button>&nbsp;
