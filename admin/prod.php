@@ -75,7 +75,7 @@ while($res = mysqli_fetch_array($result1))
                     //echo "<td>".$res['product_quantity']."</td>";
                     echo "<td>".$res['product_category_id']."</td>";
                     echo "<td><img width='35' height='35' src=".$res['product_image']."></td>";
-                    echo "<td><a href=\"editp.php?id=$res[product_id]\" style='color: lightcoral' class='fa fa-edit'></a>&nbsp; <a href=\"delete.php?prod=$res[product_code]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o'></a></td>";
+                    echo "<td><a href=\"editp.php?id=$res[product_id]\" style='color: lightcoral' class='fa fa-pencil-square-o fa-lg'></a>&nbsp; <a href=\"delete.php?prod=$res[product_code]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o fa-lg'></a></td>";
                 }
                 ?>
             </table>
