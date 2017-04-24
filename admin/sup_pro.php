@@ -99,10 +99,10 @@ while($res = mysqli_fetch_array($result1))
                             while($row = mysqli_fetch_array($result))
                             {
                                 $supplier_id = $row[supplier_id];
-                                $supplier_conatct=$row[supplier_conatct];
+                                $supplier_contact=$row[supplier_contact];
                                 //$user_lastname = $row[user_lastname];
                                 //$user_firstname= $row[user_firstname];
-                                echo "<option>$supplier_conatct</option>";
+                                echo "<option>$supplier_contact</option>";
                             }
                             ?>
                       </select>

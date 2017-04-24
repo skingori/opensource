@@ -68,7 +68,7 @@ while($res = mysqli_fetch_array($result1))
                     echo "<td class=''>".$res['supplier_id']."</td>";
                     echo "<td>".$res['supplier_name']."</td>";
                     echo "<td>".$res['supplier_address']."</td>";
-                    echo "<td>".$res['supplier_conatct']."</td>";
+                    echo "<td>".$res['supplier_contact']."</td>";
                     echo "<td><a href=\"editsu.php?id=$res[supplier_id]\" class='fa fa-edit'></a>&nbsp; <a href=\"delete.php?sup=$res[supplier_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o'></a></td>";
                 }
                 ?>

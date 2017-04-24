@@ -44,10 +44,10 @@ while($res = mysqli_fetch_array($result1))
           
                 $supplier_name_=$_POST['supplier_name'];
                 $supplier_address_=$_POST['supplier_address'];
-                $supplier_conatct_=$_POST['supplier_conatct'];
+                $supplier_contact_=$_POST['supplier_contact'];
                 
-                                mysqli_query($con,"INSERT INTO supplier_table(supplier_name,supplier_address,supplier_conatct)
-      values ('$supplier_name_','$supplier_address_','$supplier_conatct_')
+                                mysqli_query($con,"INSERT INTO supplier_table(supplier_name,supplier_address,supplier_contact)
+      values ('$supplier_name_','$supplier_address_','$supplier_contact_')
       ") or die(mysql_error());
          
        $msg = "<div class='alert alert-success'>
@@ -94,7 +94,7 @@ require 'sh.php';
           </div>
           <div class="form-group has-feedback">
               <label>Mobile Number:</label>
-              <input type="text" name="supplier_conatct" placeholder="0724090774" id="in" required class="form-control"/>
+              <input type="text" name="supplier_contact" placeholder="0724090774" id="in" required class="form-control"/>
           </div>
           <div class="form-group has-feedback">
               <label>Supplier Address:</label>
