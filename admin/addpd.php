@@ -68,7 +68,7 @@ while($res = mysqli_fetch_array($result1))
 
                             
       ?>
-<?php include 'header.php'; ?>
+<?php include 'sh.php'; ?>
 
             <!--********************Add content here *******************-->
             <form  method="POST" enctype="multipart/form-data" id="mytable">
@@ -124,7 +124,7 @@ while($res = mysqli_fetch_array($result1))
     </form>
 
         
-<?php include 'footer.php';?>
+<?php include 'sf.php';?>
             <!--********************Add content here *******************-->
 
 

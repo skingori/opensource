@@ -35,7 +35,7 @@ else
 }
 $username=$_SESSION['logname'];
 ?>
-<?php include 'header.php'; ?>
+<?php include 'sh.php'; ?>
                     <!--********************Add content here *******************-->
                     <?php
                     //including the database connection file
@@ -70,4 +70,4 @@ $username=$_SESSION['logname'];
                         ?>
                     </table>
 
-<?php include 'footer.php'; ?>
+<?php include 'sf.php'; ?>

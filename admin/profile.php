@@ -110,7 +110,7 @@ while($res = mysqli_fetch_array($result1))
 }
 ?>
 
-<?php include 'header.php'; ?>
+<?php include 'sh.php'; ?>
 <!-- add content here -->
 
 
@@ -162,4 +162,4 @@ while($res = mysqli_fetch_array($result1))
             },1000);
 </script>
 
-<?php include 'footer.php'; ?>
+<?php include 'sf.php'; ?>

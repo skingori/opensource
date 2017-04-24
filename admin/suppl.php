@@ -36,7 +36,7 @@ while($res = mysqli_fetch_array($result1))
 
 ?>
 
-<?php include 'header.php'; ?>
+<?php include 'sh.php'; ?>
         <!--********************Add content here *******************-->
         
           <?php
@@ -75,7 +75,7 @@ while($res = mysqli_fetch_array($result1))
             </table>
 
         <!--********************Add content here *******************-->
-<?php include 'footer.php'; ?>
+<?php include 'sf.php'; ?>
 
 
 
