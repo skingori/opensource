@@ -62,7 +62,7 @@ while($res = mysqli_fetch_array($result1))
 
 <!-- including header -->
 <?php
-require 'header.php';
+require 'sh.php';
 ?>
             <!--********************Add content here *******************-->
             <form  method="POST" enctype="multipart/form-data" id="mytable">
@@ -108,5 +108,5 @@ require 'header.php';
 
             <!--********************Add content here *******************-->
 <?php
-include 'footer.php';
+include 'sf.php';
 ?>

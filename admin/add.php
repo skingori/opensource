@@ -90,7 +90,7 @@ if(isset($_POST['register'])) {
 }
 ?>
 
-<?php include 'header.php'; ?>
+<?php include 'sh.php'; ?>
             <!--********************Add content here *******************-->
             <form action="" method="post">
                 <!--<div class="body bg-gray">-->
@@ -124,4 +124,4 @@ if(isset($_POST['register'])) {
                 </div>
             </form>
             <!--********************Add content here *******************-->
-<?php include 'footer.php';?>
+<?php include 'sf.php';?>

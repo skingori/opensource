@@ -60,7 +60,7 @@ while($res = mysqli_fetch_array($result1))
                             
       ?>
 
-<?php include 'header.php'; ?>
+<?php include 'sh.php'; ?>
             <!--********************Add content here *******************-->
             <form  method="POST" enctype="multipart/form-data" id="mytable">
                     <?php
@@ -121,5 +121,5 @@ while($res = mysqli_fetch_array($result1))
         
 
             <!--********************Add content here *******************-->
-<?php include 'footer.php'; ?>
+<?php include 'sf.php'; ?>
 

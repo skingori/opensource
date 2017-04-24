@@ -38,7 +38,7 @@ while($res = mysqli_fetch_array($result1))
 
 ?>
 
-<?php include 'header.php'; ?>
+<?php include 'sh.php'; ?>
 
 <!-- start of pannel one -->
                     <!-- Small boxes (Stat box) -->
@@ -226,4 +226,4 @@ while($res = mysqli_fetch_array($result1))
                     </div><!-- /.row -->
 
                     <!-- top row -->
-<?php include 'footer.php'; ?>
+<?php include 'sf.php'; ?>

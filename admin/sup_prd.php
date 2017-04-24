@@ -36,7 +36,7 @@ while($res = mysqli_fetch_array($result1))
 
 
 //add header
-require ('header.php');
+require ('sh.php');
 
 
 //add body
@@ -75,5 +75,5 @@ require ('header.php');
 
 <?php
 //add footer
-require('footer.php');
+require('sf.php');
 

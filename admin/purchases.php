@@ -36,7 +36,7 @@ while($res = mysqli_fetch_array($result1))
 
 
 //add header
-require ('header.php');
+require ('sh.php');
 
 
 //add body
@@ -81,5 +81,5 @@ $result = mysqli_query($con, "SELECT * FROM purchase_table ORDER BY purchase_id 
 
 <?php
 //add footer
-require('footer.php');
+require('sf.php');
 

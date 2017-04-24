@@ -95,7 +95,7 @@ while($res = mysqli_fetch_array($result))
 ?>
 <!-- add content here -->
 
-<?php include 'header.php'; ?>
+<?php include 'sh.php'; ?>
 <!-- add content here -->
 
 
@@ -132,4 +132,4 @@ while($res = mysqli_fetch_array($result))
     </div>
 </form>
 
-<?php include 'footer.php'; ?>
+<?php include 'sf.php'; ?>

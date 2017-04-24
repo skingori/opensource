@@ -58,7 +58,7 @@ if(isset($_POST['update']))
 <!-- add content here -->
 <?php
 //add header
-include ('header.php');
+include ('sh.php');
 ?>
 
 <form action="" method="post">
@@ -87,5 +87,5 @@ include ('header.php');
 <?php
 //adding footer
 
-include 'footer.php';
+include 'sf.php';
 ?>
