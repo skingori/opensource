@@ -96,7 +96,7 @@ if(isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"])>0)
 <!-- Products List Start -->
 <?php
 
-$results = $mysqli->query("SELECT product_code, product_name, product_desc, product_image, product_price,product_quantity FROM products_table WHERE product_quantity>0 ORDER BY product_id ASC");
+$results = $mysqli->query("SELECT product_code, product_name, product_desc, product_image, product_price FROM products_table ORDER BY product_id ASC");
 if($results){ 
 $products_item = '<ul class="products">';
 //fetch results set as object and output HTML
@@ -116,7 +116,6 @@ $products_item .= <<<EOT
 	<label>
 		<span>Quantity</span>
 		<input type="text" size="2" maxlength="2" name="product_qty" value="1" /><br>
-		<!--<small>Available :{$obj->product_quantity}</small>-->
 	</label>
 	
 	</fieldset>
