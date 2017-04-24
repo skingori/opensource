@@ -27,7 +27,7 @@ $enc= md5($login_password);
 //$hashed_password = password_hash($upass, PASSWORD_DEFAULT); // this function works only in PHP 5.5 or latest version
 
 $check_ = $con->query("SELECT login_username FROM login_table WHERE login_username='$login_username'");
-$count=$check_email->num_rows;
+$count=$check_->num_rows;
 
 if ($count==0) {
 

@@ -42,7 +42,7 @@ while($res = mysqli_fetch_array($result1))
     $supplier_id= $res['supplier_id'];
     $supplier_name= $res['supplier_name'];
     $supplier_address= $res['supplier_address'];
-    $supplier_conatct= $res['supplier_conatct'];
+    $supplier_contact= $res['supplier_contact'];
 
 }
 
@@ -56,9 +56,9 @@ if (isset($_POST['submit'])) {
 
     $supplier_name_=$_POST['supplier_name'];
     $supplier_address_=$_POST['supplier_address'];
-    $supplier_conatct_=$_POST['supplier_conatct'];
+    $supplier_contact_=$_POST['supplier_contact'];
 
-    $result = mysqli_query($con, "UPDATE supplier_table SET supplier_name='$supplier_name_',supplier_address='$supplier_address_',supplier_conatct='$supplier_conatct_' WHERE supplier_id=$id");
+    $result = mysqli_query($con, "UPDATE supplier_table SET supplier_name='$supplier_name_',supplier_address='$supplier_address_',supplier_contact='$supplier_contact_' WHERE supplier_id=$id");
 
     $msg = "<div class='alert alert-info'>
 						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; Supplier Edited !
@@ -104,7 +104,7 @@ require 'sh.php';
     </div>
     <div class="form-group has-feedback">
         <label>Mobile Number:</label>
-        <input type="text" name="supplier_conatct" placeholder="0724090774" value="<?php echo $supplier_conatct;?>" id="in" required class="form-control"/>
+        <input type="text" name="supplier_contact" placeholder="0724090774" value="<?php echo $supplier_contact;?>" id="in" required class="form-control"/>
     </div>
     <div class="form-group has-feedback">
         <label>Supplier Address:</label>

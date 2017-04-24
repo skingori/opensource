@@ -158,14 +158,14 @@ CREATE TABLE `supplier_table` (
   `supplier_id` int(11) NOT NULL,
   `supplier_name` varchar(20) NOT NULL,
   `supplier_address` varchar(20) NOT NULL,
-  `supplier_conatct` varchar(20) NOT NULL
+  `supplier_contact` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `supplier_table`
 --
 
-INSERT INTO `supplier_table` (`supplier_id`, `supplier_name`, `supplier_address`, `supplier_conatct`) VALUES
+INSERT INTO `supplier_table` (`supplier_id`, `supplier_name`, `supplier_address`, `supplier_contact`) VALUES
 (1, 'Samson Mwangi', '123-10104 NYERI', '0724090774');
 
 --
