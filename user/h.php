@@ -107,7 +107,7 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a href="profile.php"><i class="fa fa-pencil-square"></i> Change Password</a>
+                    <a href="profile.php"><i class="fa fa-pencil-square"></i> My Profile</a>
                     <!--<li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>-->
 
                 </li>

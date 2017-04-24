@@ -52,7 +52,7 @@ while($res = mysqli_fetch_array($result1))
         <button type='submit' name='search' id='print' onclick="printData();" class="btn btn-flat btn-default "><i class="fa fa-file"></i></button>
         </span>
 
-            <table  border=0 cellpadding="1" cellspacing="1" id="table1" width="100%" class="table table-hover table-striped table-condensed">
+            <table  border=0 cellpadding="1" cellspacing="1" id="table1" width="100%" class="table table-hover table-striped table-condensed table-bordered">
 
                 <tr bgcolor=''>
                     <td>Supplier ID</td>
@@ -69,7 +69,7 @@ while($res = mysqli_fetch_array($result1))
                     echo "<td>".$res['supplier_name']."</td>";
                     echo "<td>".$res['supplier_address']."</td>";
                     echo "<td>".$res['supplier_conatct']."</td>";
-                    echo "<td><a href=\"delete.php?sup=$res[supplier_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o'></a></td>";
+                    echo "<td><a href=\"editsu.php?id=$res[supplier_id]\" class='fa fa-edit'></a>&nbsp; <a href=\"delete.php?sup=$res[supplier_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o'></a></td>";
                 }
                 ?>
             </table>

@@ -142,6 +142,12 @@ while($res = mysqli_fetch_array($result1))
 
         <button type="submit" name="update" class="btn bg-olive" value="Delete">Update Password</button>
     </div>
+    <br>
+    <div>
+        <a href="myprof.php">Change Other Details</a>
+    </div>
+
+
 </form>
 
 
