@@ -20,7 +20,7 @@ if (isset($_SESSION['rank'])!="" && isset($_SESSION['logname'])!="") {
 
         $enc = md5($password_);
 	//Checking is user existing in the database or not
-        $query = "SELECT * FROM `login_table` WHERE login_username='$username_' AND login_password='$enc'";
+        $query = "SELECT * FROM `Login_table` WHERE Login_Username='$username_' AND Login_Password='$enc'";
 		$result = mysqli_query($con,$query) or die(mysql_error());
 		$rows = mysqli_num_rows($result);
         ?>
@@ -31,10 +31,10 @@ if (isset($_SESSION['rank'])!="" && isset($_SESSION['logname'])!="") {
 		$row= mysqli_fetch_array($result);
                 
                 
-                if($row['login_rank']==1){
+                if($row['Login_Rank']==1){
                     
-                    $_SESSION['logname'] = $row['login_username'];
-                    $_SESSION['rank'] = $row['login_rank'];
+                    $_SESSION['logname'] = $row['Login_Username'];
+                    $_SESSION['rank'] = $row['Login_Rank'];
 
                     //below will be used as a welcome message
                     $username=$_SESSION['logname'];
@@ -51,10 +51,10 @@ if (isset($_SESSION['rank'])!="" && isset($_SESSION['logname'])!="") {
 
                     <?php
 
-                } elseif ($row['login_rank']==2){
+                } elseif ($row['Login_Rank']==2){
 
-                    $_SESSION['logname'] = $row['login_username'];
-                    $_SESSION['rank'] = $row['login_rank'];
+                    $_SESSION['logname'] = $row['Login_Username'];
+                    $_SESSION['rank'] = $row['Login_Rank'];
 
                     $msg = "<div class='alert alert-success'>
                         <span class='glyphicon glyphicon-info-sign'></span> &nbsp;Login Successful !! Welcome

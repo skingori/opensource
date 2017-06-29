@@ -106,7 +106,7 @@ $products_item .= <<<EOT
 	<li class="product">
 	<form method="post" action="cart_update.php">
 	<div class="product-content"><h3>{$obj->product_name}</h3>
-	<div class="product-thumb"><a href="suppliers.php?x={$obj->product_code}"><img width='85' height='65' src="{$obj->product_image}"></a></div>
+	<div class="product-thumb"><a href="suppliers.php?x={$obj->product_code}"><img width='85' height='65' src="{$obj->product_image}" ALT="xxxxx"></a></div>
 	<!--<div class="product-desc">{$obj->product_desc}</div>-->
 	<div class="product-info">Price {$currency}{$obj->product_price}
 	

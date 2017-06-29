@@ -7,7 +7,7 @@
  * and open the template in the editor.
  */
 
-$con = mysqli_connect("localhost","root","root","shopping","8889");
+$con = mysqli_connect("localhost","root","root","superm","8889");
 // Check connection
 if (mysqli_connect_errno())
   {

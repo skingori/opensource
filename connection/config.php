@@ -3,7 +3,7 @@ $currency = 'Ksh '; //Currency Character or code
 
 $db_username = 'root';
 $db_password = 'root';
-$db_name = 'shopping';
+$db_name = 'superm';
 $db_host = 'localhost';
 $db_port = '8889';
 

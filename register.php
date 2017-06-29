@@ -15,23 +15,23 @@ $login_id_= strip_tags($_POST['login_id']);
 $login_username_= strip_tags($_POST['login_username']);
 $login_password_= strip_tags($_POST['login_password']);
 $login_rank_= strip_tags($_POST['login_rank']);
-$login_name_= strip_tags($_POST['login_name']);
+//$login_name_= strip_tags($_POST['login_name']);
 
 
 $login_id= $con->real_escape_string($login_id_ );
 $login_username= $con->real_escape_string($login_username_ );
 $login_password= $con->real_escape_string($login_password_);
 $login_rank= $con->real_escape_string($login_rank_ );
-$login_name= $con->real_escape_string($login_name_);
+//$login_name= $con->real_escape_string($login_name_);
 $enc= md5($login_password);
 //$hashed_password = password_hash($upass, PASSWORD_DEFAULT); // this function works only in PHP 5.5 or latest version
 
-$check_ = $con->query("SELECT login_username FROM login_table WHERE login_username='$login_username'");
+$check_ = $con->query("SELECT Login_Username FROM Login_Table WHERE Login_Username='$login_username'");
 $count=$check_->num_rows;
 
 if ($count==0) {
 
-$query = "INSERT INTO login_table(login_id,login_username,login_password,login_rank,login_name) VALUES('$login_id','$login_username','$enc','$login_rank','$login_name')";
+$query = "INSERT INTO Login_table(Login_Id,Login_Username,Login_Password,Login_Rank) VALUES('$login_id','$login_username','$enc','$login_rank')";
 
 //inserting in login table
 //$query .= "INSERT INTO login_table(login_username,login_rank,login_password,login_status) VALUES('$uname','$rank','$enc','Inactive')";
@@ -94,12 +94,12 @@ $con->close();
             <div class="form-group">
                 <input type="text" name="login_id" required class="form-control" placeholder="ID"/>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <input type="text" name="login_name" required class="form-control" placeholder="Your Name"/>
-            </div>
+            </div>-->
             <div class="form-group">
                 <select class="form-control" name="login_rank">
-                    <option selected="" value="2"> User*</option>
+                    <option selected="" value="2"> User<i style="color: red">*</i></option>
                     <!--<option value="1"> Administrator*</option>-->
                 </select>
             </div>
