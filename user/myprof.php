@@ -26,12 +26,12 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
-    $id=$res['id'];
+    $name= $res['Login_Username'];
+    $id=$res['Login_Id'];
 
 }
 /**
@@ -45,13 +45,19 @@ include_once("../connection/db.php");
 
 if(isset($_POST['update']))
 {
-    $xname_=($_POST['login_name']);
+    $xname_=($_POST['Login_Username']);
     //updating the table
 
-    $result = mysqli_query($con, "UPDATE login_table SET login_name='$xname_' WHERE id=$id");
+    $result = mysqli_query($con, "UPDATE Login_table SET Login_Username='$xname_' WHERE Login_Id=$id");
 
     //redirectig to the display page. In our case, it is index.php
-    header("Location: index.php");
+    $msg = "<div <div class='alert alert-info'>
+        <progress id='progressBar' value='0' max='10'></progress> &nbsp;  Successful !  system about to log you out.
+
+      </div>";
+
+    header('refresh: 10; url=../logout.php?logout');
+
 }
 ?>
 
@@ -73,7 +79,7 @@ include ('h.php');
         </div>
         <div class="form-group">
             <label>Name:</label>
-            <input type="text" name="login_name" value="<?php echo $name;?>" required class="form-control" placeholder="firstname"/>
+            <input type="text" name="Login_Username" value="<?php echo $name;?>" required class="form-control" placeholder="firstname"/>
         </div>
 
         <!--</div>-->

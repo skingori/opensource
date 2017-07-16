@@ -6,7 +6,7 @@ if (isset($_SESSION['rank'])!="" && isset($_SESSION['logname'])!="") {
 }
 
 	require('connection/db.php');
-        session_start();
+  //      session_start();
 // If form submitted, insert values into the database.
     if (isset($_POST['sign'])){
 
@@ -26,13 +26,13 @@ if (isset($_SESSION['rank'])!="" && isset($_SESSION['logname'])!="") {
         ?>
 
              <?php
-             
+
                 $rowCheck = mysqli_num_rows($result);
 		$row= mysqli_fetch_array($result);
-                
-                
+
+
                 if($row['Login_Rank']==1){
-                    
+
                     $_SESSION['logname'] = $row['Login_Username'];
                     $_SESSION['rank'] = $row['Login_Rank'];
 
@@ -96,7 +96,7 @@ if (isset($_SESSION['rank'])!="" && isset($_SESSION['logname'])!="") {
     </head>
     <body class="bg-black">
         <div class="form-box" id="login-box">
-            
+
               <?php
 		if (isset($msg)) {
 			echo $msg;
@@ -115,14 +115,14 @@ if (isset($_SESSION['rank'])!="" && isset($_SESSION['logname'])!="") {
                     <div class="form-group">
                         <input type="checkbox" name="remember_me"/> Remember me
                     </div>
-                    
+
                 </div>
-                <div class="footer">                                                               
+                <div class="footer">
                     <button type="submit" name="sign" class="btn bg-olive btn-block">Sign me in</button>
-                    
-                    
+
+
                     <!--<p><a href="#">I forgot my password</a></p>-->
-                    
+
                     <a href="register.php" class="text-center">Register a new membership</a>
                 </div>
             </form>
@@ -135,14 +135,14 @@ if (isset($_SESSION['rank'])!="" && isset($_SESSION['logname'])!="") {
                 <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
             </div>
         </div>
-        
+
         <!-- start of php -->
 
-        
+
         <!-- jQuery 2.0.2 -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
         <!-- Bootstrap -->
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>        
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
 
     </body>
 </html>

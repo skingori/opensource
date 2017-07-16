@@ -33,12 +33,16 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="skin-black">
+<body class="skin-blue">
 <!-- header logo: style can be found in header.less -->
 <header class="header">
     <a href="index.php" class="logo">
         <!-- Add the class icon to your logo image or logo icon to add the margining -->
-        <img src="../img/shop.png" height="45" width="65">
+        <!--<img src="../img/shop.png" height="45" width="65">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+        </span>-->
+  <small>Great stores. Great choices.</small>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -58,14 +62,14 @@
                 <li class="active">
                     <a href="view_cart.php" class="active">
                         <i class="glyphicon glyphicon-shopping-cart"></i>
-                        <span class="label label-success"><?php echo "$b"."&nbsp"."";?></span>
+                        <span class="label label-success"><?php //echo "$b"."&nbsp"."";?>+</span>
                     </a>
 
                 </li>
                 <li class="active">
                     <a href="../logout.php?logout" class="active">
                         <i class="glyphicon glyphicon-log-out"></i>
-                        <span>Logout &nbsp;<small class="active" style="color: #00a65a"><?php echo "$name";?></small></span>
+                        <span>Logout &nbsp;<small class="active" style="color: #00a65a"><?php echo "$username";?></small></span>
                     </a>
 
                 </li>
@@ -90,7 +94,7 @@
                 </div>
             </div>
             <!-- search form -->
-            <form action="#" method="get" class="sidebar-form">
+            <form action="index.php" method="get" class="sidebar-form">
                 <div class="input-group">
                     <input type="text" name="q" class="form-control" placeholder="Search..."/>
                     <span class="input-group-btn">
@@ -107,7 +111,7 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a href="profile.php"><i class="fa fa-pencil-square"></i> My Profile</a>
+                    <a href="profile.php"><i class="fa fa-pencil-square"></i> Profile</a>
                     <!--<li><a href="mylogs.php"><i class="fa fa-angle-double-right"></i> My logs</a></li>-->
 
                 </li>
@@ -117,11 +121,11 @@
                         <i class="fa fa-shopping-cart"></i> <span>Suppliers</span>
                     </a>
                 </li>-->
-                <li class="active">
+                <!--<li class="active">
                     <a href="feedback.php">
                         <i class="fa fa-question"></i> <span>Feedback</span>
                     </a>
-                </li>
+                </li>-->
                 <li class="active">
                     <a href="help.php">
                         <i class="fa ion-ios7-help-outline"></i> <span>Help</span>

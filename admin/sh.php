@@ -31,12 +31,13 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="skin-black">
+<body class="skin-blue">
 <!-- header logo: style can be found in header.less -->
 <header class="header">
     <a href="index.php" class="logo">
-        <!-- Add the class icon to your logo image or logo icon to add the margining -->
-        <img src="../img/shop.png" height="45" width="65">
+        <!-- Add the class icon to your logo image or logo icon to add the margining
+        <img src="../img/shop.png" height="45" width="65">-->
+        <small>Great stores. Great choices.</small>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -52,14 +53,6 @@
                 <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
-                        <?php
-                        $result = mysqli_query($con,"SELECT COUNT(1) FROM feedback_table ORDER BY feedback_id ASC");
-                        $row = mysqli_fetch_array($result);
-
-                        $total = $row[0];
-                        ?>
-
                         <i class="fa fa-envelope"></i>
                         <span class="label label-success"><?php echo "$total";?></span>
                     </a>

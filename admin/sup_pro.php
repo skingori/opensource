@@ -26,11 +26,11 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
+    $name= $res['Login_Username'];
 
 }
 
@@ -46,9 +46,9 @@ while($res = mysqli_fetch_array($result1))
                 $supplier_product_product_id_=$_POST['supplier_product_product_id'];
                 $supplier_product_price_=$_POST['supplier_product_price'];
                 
-                                mysqli_query($con,"INSERT INTO supplier_product(supplier_product_supplier_id,supplier_product_product_id,supplier_product_price)
+                                mysqli_query($con,"INSERT INTO Supplier_products(Sup_Prod_Supplier_Id,Sup_Prod_Product_Id,Sup_Prod_Product_Price)
       values ('$supplier_product_supplier_id_','$supplier_product_product_id_','$supplier_product_price_')
-      ") or die(mysql_error());
+      ") or die(mysqli_error($con));
          
        $msg = "<div class='alert alert-success'>
 						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; Product_Supply Registered !
@@ -69,17 +69,17 @@ while($res = mysqli_fetch_array($result1))
                     }
                     ?>
           <div class="form-group has-feedback">
-              <label>Product ID:</label>
+              <label>Product Code:</label>
                       <select name="supplier_product_product_id" required class="form-control">
-                           <option selected="">...Select ID...</option>
+                           <option selected="">...Select Code...</option>
                             <?php
                             //include("../connection/db.php");
-                            $query = "SELECT * FROM products_table";
+                            $query = "SELECT * FROM Products_table";
                             $result = mysqli_query($con,$query);
                             while($row = mysqli_fetch_array($result))
                             {
-                                $product_id = $row[product_id];
-                                $product_code=$row[product_code];
+                                $product_id = $row[Product_Id];
+                                $product_code=$row[Product_Code];
                                 //$user_lastname = $row[user_lastname];
                                 //$user_firstname= $row[user_firstname];
                                 echo "<option>$product_code</option>";
@@ -94,12 +94,12 @@ while($res = mysqli_fetch_array($result1))
                            <option selected="">...Select ID...</option>
                             <?php
                             //include("../connection/db.php");
-                            $query = "SELECT * FROM supplier_table";
+                            $query = "SELECT * FROM Supplier_table";
                             $result = mysqli_query($con,$query);
                             while($row = mysqli_fetch_array($result))
                             {
-                                $supplier_id = $row[supplier_id];
-                                $supplier_contact=$row[supplier_contact];
+                                $supplier_id = $row[Supplier_Id];
+                                $supplier_contact=$row[Supplier_Contact];
                                 //$user_lastname = $row[user_lastname];
                                 //$user_firstname= $row[user_firstname];
                                 echo "<option>$supplier_contact</option>";

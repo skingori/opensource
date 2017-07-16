@@ -26,11 +26,11 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
+    $name= $res['Login_Username'];
 
 }
 
@@ -45,7 +45,7 @@ require ('sh.php');
 
             //fetching data in descending order (lastest entry first)
             //$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
-            $result = mysqli_query($con, "SELECT * FROM supplier_product ORDER BY supplier_product_id ASC"); // using mysqli_query instead
+            $result = mysqli_query($con, "SELECT * FROM Supplier_products ORDER BY Sup_Prod_Id ASC"); // using mysqli_query instead
             ?>
     <span class="input-group-btn">
         <button type='submit' name='search' id='print' onclick="printData();" class="btn btn-flat btn-default "><i class="fa fa-print"></i></button>&nbsp;
@@ -63,10 +63,10 @@ require ('sh.php');
     //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array
     while($res = mysqli_fetch_array($result)) {
         echo "<tr class=\"alert-info\">";
-        echo "<td class=''>".$res['supplier_product_id']."</td>";
-        echo "<td>".$res['supplier_product_supplier_id']."</td>";
-        echo "<td>".$res['supplier_product_product_id']."</td>";
-        echo "<td><a href=\"delete.php?sup1=$res[supplier_product_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o'></a></td>";
+        echo "<td>".$res['Sup_Prod_Id']."</td>";
+        echo "<td class=''>".$res['Sup_Prod_Supplier_Id']."</td>";
+        echo "<td>".$res['Sup_Prod_Product_Id']."</td>";
+        echo "<td><a href=\"delete.php?sup1=$res[Sup_Prod_Id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o'></a></td>";
     }
     ?>
 </table>

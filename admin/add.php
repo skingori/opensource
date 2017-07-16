@@ -10,11 +10,11 @@ session_start();
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
+    $name= $res['Login_Username'];
 }
 
 // Check, if user is already login, then jump to secured page
@@ -42,30 +42,28 @@ require_once '../connection/db.php';
 if(isset($_POST['register'])) {
 
     
-    $login_id_= strip_tags($_POST['login_id']);
-    $login_username_= strip_tags($_POST['login_username']);
-    $login_password_= strip_tags($_POST['login_password']);
+    $Login_Id_= strip_tags($_POST['Login_Id']);
+    $Login_Username_= strip_tags($_POST['Login_Username']);
+    $Login_Password_= strip_tags($_POST['Login_Password']);
     $login_rank_= strip_tags($_POST['login_rank']);
-    $login_name_= strip_tags($_POST['login_name']);
-    
 
-    $login_id= $con->real_escape_string($login_id_ );
-    $login_username= $con->real_escape_string($login_username_ );
-    $login_password= $con->real_escape_string($login_password_);
+    $Login_Id= $con->real_escape_string($Login_Id_ );
+    $Login_Username= $con->real_escape_string($Login_Username_ );
+    $Login_Password= $con->real_escape_string($Login_Password_);
     $login_rank= $con->real_escape_string($login_rank_ );
-    $login_name= $con->real_escape_string($login_name_);
-    $enc= md5($login_password);
+
+    $enc= md5($Login_Password);
     //$hashed_password = password_hash($upass, PASSWORD_DEFAULT); // this function works only in PHP 5.5 or latest version
 
-    $check_ = $con->query("SELECT login_username FROM login_table WHERE login_username='$login_username'");
-    $count=$check_email->num_rows;
+    $check_ = $con->query("SELECT Login_Username FROM Login_table WHERE Login_Username='$Login_Username'");
+    $count=$check_->num_rows;
 
     if ($count==0) {
 
-        $query = "INSERT INTO login_table(login_id,login_username,login_password,login_rank,login_name) VALUES('$login_id','$login_username','$enc','$login_rank','$login_name')";
+        $query = "INSERT INTO Login_table(Login_Id,Login_Username,Login_Password,login_rank) VALUES('$Login_Id','$Login_Username','$enc','$login_rank')";
 
         //inserting in login table
-        //$query .= "INSERT INTO login_table(login_username,login_rank,login_password,login_status) VALUES('$uname','$rank','$enc','Inactive')";
+        //$query .= "INSERT INTO Login_table(Login_Username,login_rank,Login_Password,login_status) VALUES('$uname','$rank','$enc','Inactive')";
 
         if ($con->query($query)) {
             $msg = "<div class='alert alert-success'>
@@ -81,7 +79,7 @@ if(isset($_POST['register'])) {
 
 
         $msg = "<div class='alert alert-danger'>
-					<span class='glyphicon glyphicon-info-sign'></span> &nbsp; sorry email already taken !
+					<span class='glyphicon glyphicon-info-sign'></span> &nbsp; sorry id already taken !
 				</div>";
 
     }
@@ -100,10 +98,7 @@ if(isset($_POST['register'])) {
                     }
                     ?>
                     <div class="form-group">
-                        <input type="text" name="login_id" required class="form-control" placeholder="ID"/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="login_name" required class="form-control" placeholder="Your Name"/>
+                        <input type="text" name="Login_Id" required class="form-control" placeholder="ID"/>
                     </div>
                     <div class="form-group">
                         <select class="form-control" name="login_rank">
@@ -112,10 +107,10 @@ if(isset($_POST['register'])) {
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="login_username" required class="form-control" placeholder="Username"/>
+                        <input type="text" name="Login_Username" required class="form-control" placeholder="Username"/>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="login_password" required class="form-control" placeholder="Password"/>
+                        <input type="password" name="Login_Password" required class="form-control" placeholder="Password"/>
                     </div>
                 <!--</div>-->
                 <div class="footer">

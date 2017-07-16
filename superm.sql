@@ -3,12 +3,18 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jun 29, 2017 at 02:41 PM
+-- Generation Time: Jul 16, 2017 at 09:34 PM
 -- Server version: 5.5.42
 -- PHP Version: 5.6.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `superm`
@@ -33,10 +39,17 @@ CREATE TABLE `Category_products` (
 --
 
 CREATE TABLE `Category_table` (
-  `Category_Id` int(20) NOT NULL DEFAULT '0',
+  `Category_Id` int(20) NOT NULL,
   `Category_Name` varchar(50) DEFAULT NULL,
   `Category_Desc` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Category_table`
+--
+
+INSERT INTO `Category_table` (`Category_Id`, `Category_Name`, `Category_Desc`) VALUES
+(1, 'www', 'www');
 
 -- --------------------------------------------------------
 
@@ -70,9 +83,10 @@ CREATE TABLE `Login_table` (
 --
 
 INSERT INTO `Login_table` (`Login_Id`, `Login_Username`, `Login_Password`, `Login_Rank`) VALUES
-(0, 'ws', 'eac93fc0e5bfbe34e7ec3ab68738f26e', 2),
-(3434, '343er', '4fa40b3be9ec7c495528fca1347a74c9', 2),
-(21212, 'user', '81dc9bdb52d04dc20036dbd8313ed055', 2);
+(0, 'admin1', 'e00cf25ad42683b3df678c61f42c6bda', 1),
+(21212, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 2),
+(43243, 'test', '098f6bcd4621d373cade4e832627b4f6', 2),
+(23232323, 'admin1', '81dc9bdb52d04dc20036dbd8313ed055', 1);
 
 -- --------------------------------------------------------
 
@@ -84,19 +98,29 @@ CREATE TABLE `Products_table` (
   `Product_Id` int(20) NOT NULL DEFAULT '0',
   `Product_Code` varchar(50) DEFAULT NULL,
   `Product_Name` varchar(50) DEFAULT NULL,
-  `Product_Price` varchar(50) DEFAULT NULL
+  `Product_Image` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Products_table`
+--
+
+INSERT INTO `Products_table` (`Product_Id`, `Product_Code`, `Product_Name`, `Product_Image`) VALUES
+(24234, '234wqe', 'erwer55', '../upload/product-thumbnail.png'),
+(4234234, '435342', 'UNGA', '../upload/PACK-Jogoo-Fortified-e1429516590474.png'),
+(46547646, '9886876', 'BLUEBAND', '../upload/1.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Purchase_Product_Id`
+-- Table structure for table `Purchase_table`
 --
 
-CREATE TABLE `Purchase_Product_Id` (
-  `Purchase_Payment_Method` int(20) DEFAULT NULL,
-  `Purchase_Date` varchar(50) DEFAULT NULL,
-  `Purchase_Customer_Id` varchar(50) NOT NULL DEFAULT ''
+CREATE TABLE `Purchase_table` (
+  `Purchase_Product_Id` int(20) NOT NULL,
+  `Purchase_Payment_Method` varchar(20) DEFAULT NULL,
+  `Purchase_Date` varchar(20) DEFAULT NULL,
+  `Purchase_Customer_Id` int(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -106,11 +130,21 @@ CREATE TABLE `Purchase_Product_Id` (
 --
 
 CREATE TABLE `Supplier_products` (
-  `Sup_Prod_Id` int(20) NOT NULL DEFAULT '0',
+  `Sup_Prod_Id` int(20) NOT NULL,
   `Sup_Prod_Supplier_Id` int(20) DEFAULT NULL,
   `Sup_Prod_Product_Id` int(20) DEFAULT NULL,
   `Sup_Prod_Product_Price` int(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Supplier_products`
+--
+
+INSERT INTO `Supplier_products` (`Sup_Prod_Id`, `Sup_Prod_Supplier_Id`, `Sup_Prod_Product_Id`, `Sup_Prod_Product_Price`) VALUES
+(1, 564356, 24234, 3243),
+(3, 11, 4234234, 600),
+(4, 11, 435342, 300),
+(5, 11, 234, 700);
 
 -- --------------------------------------------------------
 
@@ -124,6 +158,13 @@ CREATE TABLE `Supplier_table` (
   `Supplier_Address` varchar(50) DEFAULT NULL,
   `Supplier_Contact` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Supplier_table`
+--
+
+INSERT INTO `Supplier_table` (`Supplier_Id`, `Supplier_Name`, `Supplier_Address`, `Supplier_Contact`) VALUES
+(6456, 'user', '11', 11);
 
 --
 -- Indexes for dumped tables
@@ -160,10 +201,10 @@ ALTER TABLE `Products_table`
   ADD PRIMARY KEY (`Product_Id`);
 
 --
--- Indexes for table `Purchase_Product_Id`
+-- Indexes for table `Purchase_table`
 --
-ALTER TABLE `Purchase_Product_Id`
-  ADD PRIMARY KEY (`Purchase_Customer_Id`);
+ALTER TABLE `Purchase_table`
+  ADD PRIMARY KEY (`Purchase_Product_Id`);
 
 --
 -- Indexes for table `Supplier_products`
@@ -176,3 +217,21 @@ ALTER TABLE `Supplier_products`
 --
 ALTER TABLE `Supplier_table`
   ADD PRIMARY KEY (`Supplier_Id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `Category_table`
+--
+ALTER TABLE `Category_table`
+  MODIFY `Category_Id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `Supplier_products`
+--
+ALTER TABLE `Supplier_products`
+  MODIFY `Sup_Prod_Id` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

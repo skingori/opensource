@@ -26,11 +26,11 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
+    $name= $res['Login_Username'];
 
 }
 
@@ -47,7 +47,7 @@ while($res = mysqli_fetch_array($result1))
 
         $edit = $_GET['edit'];
         //selecting data associated with this particular id
-        $result = mysqli_query($con, "SELECT * FROM category_table WHERE category_id=$edit");
+        $result = mysqli_query($con, "SELECT * FROM Category_table WHERE Category_Id=$edit");
 
         while($res = mysqli_fetch_array($result))
         {
@@ -69,9 +69,9 @@ while($res = mysqli_fetch_array($result1))
     if (isset($_POST['add'])) {
             $category_desc_=$_POST['category_desc'];
             $category_name_=$_POST['category_name'];
-                            mysqli_query($con,"INSERT INTO category_table (category_desc,category_name)
+                            mysqli_query($con,"INSERT INTO Category_table (Category_Desc,Category_Name)
     values ('$category_desc_','$category_name_')
-    ") or die(mysqli_error());
+    ") or die(mysqli_error($con));
 
     $msg = "<div class='alert alert-success'>
                     <span class='glyphicon glyphicon-align-justify'></span> &nbsp; Category Added !
@@ -86,7 +86,7 @@ while($res = mysqli_fetch_array($result1))
         $category_desc_=$_POST['category_desc'];
         $category_name_=$_POST['category_name'];
 
-        $result = mysqli_query($con, "UPDATE category_table SET category_desc='$category_desc_',category_name='$category_name_' WHERE category_id=$edit");
+        $result = mysqli_query($con, "UPDATE Category_table SET Category_Desc='$category_desc_',Category_Name='$category_name_' WHERE Category_Id=$edit");
 
         $msg = "<div class='alert alert-info'>
                     <span class='glyphicon glyphicon-edit'></span> &nbsp; Category Updated !

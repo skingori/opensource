@@ -26,11 +26,11 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
+    $name= $res['Login_Username'];
 
 }
 
@@ -45,7 +45,7 @@ while($res = mysqli_fetch_array($result1))
 
             //fetching data in descending order (lastest entry first)
             //$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
-            $result = mysqli_query($con, "SELECT * FROM login_table WHERE login_username <>'$username'"); // using mysqli_query instead
+            $result = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username <>'$username'"); // using mysqli_query instead
             ?>
         <span class="input-group-btn">
         <button type='submit' name='search' id='print' onclick="printData();" class="btn btn-flat btn-default "><i class="fa fa-print"></i></button>&nbsp;
@@ -64,10 +64,10 @@ while($res = mysqli_fetch_array($result1))
                 //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array
                 while($res = mysqli_fetch_array($result)) {
                     echo "<tr class=\"alert-info\">";
-                    echo "<td class=''>".$res['login_id']."</td>";
-                    echo "<td>".$res['login_username']."</td>";
-                    echo "<td>".$res['login_name']."</td>";
-                echo "<td> <a href=\"delete.php?usd=$res[login_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o'></a></td>";
+                    echo "<td class=''>".$res['Login_Id']."</td>";
+                    echo "<td>".$res['Login_Username']."</td>";
+                    echo "<td>".$res['Login_Username']."</td>";
+                echo "<td> <a href=\"delete.php?usd=$res[Login_Id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o'></a></td>";
                 }
             ?>
             </table>

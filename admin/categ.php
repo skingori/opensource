@@ -26,11 +26,11 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
+    $name= $res['Login_Username'];
 
 }
 
@@ -45,7 +45,7 @@ while($res = mysqli_fetch_array($result1))
 
             //fetching data in descending order (lastest entry first)
             //$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
-            $result = mysqli_query($con, "SELECT * FROM category_table ORDER BY category_id ASC"); // using mysqli_query instead
+            $result = mysqli_query($con, "SELECT * FROM Category_table ORDER BY Category_Id ASC"); // using mysqli_query instead
             ?>
 <span class="input-group-btn">
         <button type='submit' name='search' id='print' onclick="printData();" class="btn btn-flat btn-default "><i class="fa fa-print"></i></button>&nbsp;
@@ -64,10 +64,10 @@ while($res = mysqli_fetch_array($result1))
                 //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array
                 while($res = mysqli_fetch_array($result)) {
                     echo "<tr class=\"alert-info\">";
-                    echo "<td class=''>".$res['category_id']."</td>";
-                    echo "<td>".$res['category_desc']."</td>";
-                    echo "<td>".$res['category_name']."</td>";
-                    echo "<td><a href=\"catego.php?edit=$res[category_id]\" style='color: #3DA0DB' class='fa fa-pencil'></a> &nbsp;<a href=\"delete.php?cat=$res[category_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" style='color: red' class='fa fa-trash-o'></a></td>";
+                    echo "<td class=''>".$res['Category_Id']."</td>";
+                    echo "<td>".$res['Category_Name']."</td>";
+                    echo "<td>".$res['Category_Desc']."</td>";
+                    echo "<td><a href=\"catego.php?edit=$res[Category_Id]\" style='color: #3DA0DB' class='fa fa-pencil'></a> &nbsp;<a href=\"delete.php?cat=$res[Category_Id]\" onClick=\"return confirm('Are you sure you want to delete?')\" style='color: red' class='fa fa-trash-o'></a></td>";
                 }
                 ?>
             </table>

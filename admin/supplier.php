@@ -26,11 +26,11 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
+    $name= $res['Login_Username'];
 
 }
 
@@ -41,14 +41,15 @@ while($res = mysqli_fetch_array($result1))
         require '../connection/db.php';
 
       if (isset($_POST['submit'])) {
-          
+
+                $supplier_id_=$_POST['supplier_id'];
                 $supplier_name_=$_POST['supplier_name'];
                 $supplier_address_=$_POST['supplier_address'];
                 $supplier_contact_=$_POST['supplier_contact'];
                 
-                                mysqli_query($con,"INSERT INTO supplier_table(supplier_name,supplier_address,supplier_contact)
-      values ('$supplier_name_','$supplier_address_','$supplier_contact_')
-      ") or die(mysql_error());
+                                mysqli_query($con,"INSERT INTO Supplier_table(Supplier_Id,Supplier_Name,Supplier_Address,Supplier_Contact)
+      values ('$supplier_id_','$supplier_name_','$supplier_address_','$supplier_contact_')
+      ") or die(mysqli_error($con));
          
        $msg = "<div class='alert alert-success'>
 						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; Supplier Registered !
@@ -71,27 +72,14 @@ require 'sh.php';
                         echo $msg;
                     }
                     ?>
-          <div class="form-group has-feedback">
-              <label>Supplier Name:</label>
-                      <select name="supplier_name" required class="form-control">
-                           <option selected="">...Select Name...</option>
-                            <?php
-                            //include("../connection/db.php");
-                            $query = "SELECT * FROM login_table";
-                            $result = mysqli_query($con,$query);
-                            echo "<option></option>";
-                            while($row = mysqli_fetch_array($result))
-                            {
-                                $id = $row[id];
-                                $login_name=$row[login_name];
-                                //$user_lastname = $row[user_lastname];
-                                //$user_firstname= $row[user_firstname];
-                                echo "<option>$login_name</option>";
-                            }
-                            ?>
-                      </select>
-              <a href="javascript:window.open('add.php','mypopuptitle','width=700,height=600')">Add New</a>
-          </div>
+            <div class="form-group has-feedback">
+                <label>Supplier ID:</label>
+                <input type="text" name="supplier_id"  id="in" placeholder="Supplier ID" required class="form-control">
+            </div>
+            <div class="form-group has-feedback">
+                <label>Supplier Name:</label>
+                <input type="text" name="supplier_name"  id="in" placeholder="Supplier Name" required class="form-control">
+            </div>
           <div class="form-group has-feedback">
               <label>Mobile Number:</label>
               <input type="text" name="supplier_contact" placeholder="0724090774" id="in" required class="form-control"/>

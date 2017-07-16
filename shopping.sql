@@ -79,23 +79,23 @@ INSERT INTO `feedback_table` (`feedback_id`, `feedback_product_id`, `feedback_ra
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login_table`
+-- Table structure for table `Login_table`
 --
 
-CREATE TABLE `login_table` (
+CREATE TABLE `Login_table` (
   `id` int(11) NOT NULL,
-  `login_id` int(11) NOT NULL,
-  `login_username` varchar(20) NOT NULL,
-  `login_password` varchar(100) NOT NULL,
+  `Login_Id` int(11) NOT NULL,
+  `Login_Username` varchar(20) NOT NULL,
+  `Login_Password` varchar(100) NOT NULL,
   `login_rank` int(20) NOT NULL,
-  `login_name` varchar(20) NOT NULL
+  `Login_Username` varchar(20) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `login_table`
+-- Dumping data for table `Login_table`
 --
 
-INSERT INTO `login_table` (`id`, `login_id`, `login_username`, `login_password`, `login_rank`, `login_name`) VALUES
+INSERT INTO `Login_table` (`id`, `Login_Id`, `Login_Username`, `Login_Password`, `login_rank`, `Login_Username`) VALUES
 (1, 8978787, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1, 'samsy'),
 (3, 12345678, 'admin1', '81dc9bdb52d04dc20036dbd8313ed055', 1, 'Samson Mwangi'),
 (4, 34, 'user', 'fca84d592e2e7655a9dc7afd28d4fbae', 2, 'sam');
@@ -185,12 +185,12 @@ ALTER TABLE `feedback_table`
   ADD PRIMARY KEY (`feedback_id`);
 
 --
--- Indexes for table `login_table`
+-- Indexes for table `Login_table`
 --
-ALTER TABLE `login_table`
+ALTER TABLE `Login_table`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `login_username` (`login_username`),
-  ADD UNIQUE KEY `login_id` (`login_id`);
+  ADD UNIQUE KEY `Login_Username` (`Login_Username`),
+  ADD UNIQUE KEY `Login_Id` (`Login_Id`);
 
 --
 -- Indexes for table `products_table`
@@ -226,9 +226,9 @@ ALTER TABLE `category_table`
 ALTER TABLE `feedback_table`
   MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
--- AUTO_INCREMENT for table `login_table`
+-- AUTO_INCREMENT for table `Login_table`
 --
-ALTER TABLE `login_table`
+ALTER TABLE `Login_table`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `products_table`

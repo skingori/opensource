@@ -26,11 +26,11 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
+    $name= $res['Login_Username'];
 
 }
 
@@ -45,7 +45,7 @@ while($res = mysqli_fetch_array($result1))
 
             //fetching data in descending order (lastest entry first)
             //$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
-            $result = mysqli_query($con, "SELECT * FROM supplier_table ORDER BY supplier_id ASC"); // using mysqli_query instead
+            $result = mysqli_query($con, "SELECT * FROM Supplier_table ORDER BY Supplier_Id ASC"); // using mysqli_query instead
             ?>
 <span class="input-group-btn">
         <button type='submit' name='search' id='print' onclick="printData();" class="btn btn-flat btn-default "><i class="fa fa-print"></i></button>&nbsp;
@@ -65,11 +65,11 @@ while($res = mysqli_fetch_array($result1))
                 //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array
                 while($res = mysqli_fetch_array($result)) {
                     echo "<tr class=\"alert-info\">";
-                    echo "<td class=''>".$res['supplier_id']."</td>";
-                    echo "<td>".$res['supplier_name']."</td>";
-                    echo "<td>".$res['supplier_address']."</td>";
-                    echo "<td>".$res['supplier_contact']."</td>";
-                    echo "<td><a href=\"editsu.php?id=$res[supplier_id]\" class='fa fa-edit'></a>&nbsp; <a href=\"delete.php?sup=$res[supplier_id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o'></a></td>";
+                    echo "<td class=''>".$res['Supplier_Id']."</td>";
+                    echo "<td>".$res['Supplier_Name']."</td>";
+                    echo "<td>".$res['Supplier_Address']."</td>";
+                    echo "<td>".$res['Supplier_Contact']."</td>";
+                    echo "<td><a href=\"editsu.php?id=$res[Supplier_Id]\" class='fa fa-edit'></a>&nbsp; <a href=\"delete.php?sup=$res[Supplier_Id]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o'></a></td>";
                 }
                 ?>
             </table>

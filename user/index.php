@@ -29,18 +29,18 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
+    $name= $res['Login_Username'];
 
 }
 
 ?>
 
 <?php
-session_start();
+//session_start();
 include_once("../connection/config.php");
 //current URL of the Page. cart_update.php redirects back to this URL
 $current_url = urlencode($url="http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
@@ -96,8 +96,8 @@ if(isset($_SESSION["cart_products"]) && count($_SESSION["cart_products"])>0)
 <!-- Products List Start -->
 <?php
 
-$results = $mysqli->query("SELECT product_code, product_name, product_desc, product_image, product_price FROM products_table ORDER BY product_id ASC");
-if($results){ 
+$results = $mysqli->query("SELECT Product_Code,Product_Name , product_image FROM Products_table ORDER BY Product_Id ASC");
+if($results){
 $products_item = '<ul class="products">';
 //fetch results set as object and output HTML
 while($obj = $results->fetch_object())
@@ -105,24 +105,24 @@ while($obj = $results->fetch_object())
 $products_item .= <<<EOT
 	<li class="product">
 	<form method="post" action="cart_update.php">
-	<div class="product-content"><h3>{$obj->product_name}</h3>
-	<div class="product-thumb"><a href="suppliers.php?x={$obj->product_code}"><img width='85' height='65' src="{$obj->product_image}" ALT="xxxxx"></a></div>
+	<div class="product-content"><h3>{$obj->Product_Name}</h3>
+	<div class="product-thumb"><a href="suppliers.php?x={$obj->Product_Code}"><img width='75' height='96' src="{$obj->product_image}" ALT="xxxxx"></a></div>
 	<!--<div class="product-desc">{$obj->product_desc}</div>-->
-	<div class="product-info">Price {$currency}{$obj->product_price}
-	
+	<div class="product-info">Price {$currency}<a href="suppliers.php?x={$obj->Product_Code}"><small>get here</small></a>
+
 	<fieldset>
-	
-	
-	<label>
+
+
+	<!--<label>
 		<span>Quantity</span>
 		<input type="text" size="2" maxlength="2" name="product_qty" value="1" /><br>
-	</label>
-	
+	</label>-->
+
 	</fieldset>
 	<input type="hidden" name="product_code" value="{$obj->product_code}" />
 	<input type="hidden" name="type" value="add" />
 	<input type="hidden" name="return_url" value="{$current_url}" />
-	<div align="center"><button type="submit" class="add_to_cart">Add</button></div>
+	<!--<div align="center"><button type="submit" class="add_to_cart">Add</button></div>-->
 	</div></div>
 	</form>
 	</li>
@@ -131,13 +131,9 @@ EOT;
 $products_item .= '</ul>';
 echo $products_item;
 }
-?>    
+?>
 
 
 <!--********************Add content here *******************-->
 
 <?php include 'f.php';?>
-
-
-
-

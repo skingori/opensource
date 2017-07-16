@@ -26,26 +26,23 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
+    $name= $res['Login_Username'];
 
 }
 
 $id = $_GET['id'];
-$result1 = mysqli_query($con, "SELECT * FROM products_table WHERE product_id='$id'");
+$result1 = mysqli_query($con, "SELECT * FROM Products_table WHERE Product_Id='$id'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $product_id= $res['product_id'];
-    $product_code= $res['product_code'];
-    $product_name= $res['product_name'];
-    $product_price= $res['product_price'];
-    $product_image= $res['product_image'];
-    $product_desc= $res['product_desc'];
-    $product_category_id= $res['product_category_id'];
+    $product_id= $res['Product_Id'];
+    $product_code= $res['Product_Code'];
+    $product_name= $res['Product_Name'];
+    $product_image= $res['Product_Image'];
 
 }
 
@@ -66,12 +63,9 @@ while($res = mysqli_fetch_array($result1))
                                 $location = "../upload/" . $_FILES["image"]["name"];
                 $product_name_=$_POST['product_name'];
                 $product_code_=$_POST['product_code'];
-                $product_price_=$_POST['product_price'];
                 //$product_quantity_=$_POST['product_quantity'];
-                $product_category_id_=$_POST['product_category_id'];
-                $product_desc_=$_POST['product_desc'];
 
-                $result = mysqli_query($con, "UPDATE products_table SET product_name='$product_name_',product_image='$location',product_code='$product_code_',product_price='$product_price_',product_category_id='$product_category_id_',product_desc='$product_desc_' WHERE product_id='$id'");
+                $result = mysqli_query($con, "UPDATE Products_table SET Product_Name='$product_name_',Product_Image='$location',Product_Code='$product_code_' WHERE Product_Id='$id'");
          
        $msg = "<div class='alert alert-success'>
 						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; New Product Added !
@@ -103,34 +97,10 @@ while($res = mysqli_fetch_array($result1))
               <label>Product Code:</label>
               <input type="text" name="product_code" value="<?php echo $product_code;?>" id="in" required class="form-control"/>
           </div>
-          <div class="form-group has-feedback">
-              <label>Product Price:</label>
-              <input type="text" name="product_price" value="<?php echo $product_price;?>" id="in" required class="form-control"/>
-          </div>
           <!--<div class="form-group has-feedback">
               <label>Product Quantity:</label>
               <input type="text" name="product_quantity"  id="in" required class="form-control"/>
           </div>-->
-          <div class="form-group has-feedback">
-              <label>Product Description:</label>
-              <input type="text" name="product_desc" value="<?php echo $product_desc;?>" id="in" required class="form-control"/>
-          </div>
-          <div class="form-group has-feedback">
-              <label>Product Category:</label>
-                      <select name="product_category_id" required class="form-control">
-                          <option value="<?php echo $product_category_id;?>"></option>
-                                <?php
-                          $result = mysqli_query($con,"SELECT category_name FROM category_table");
-                          while($row = mysqli_fetch_array($result))
-                            {
-                              echo '<option value="'.$row['category_name'].'">';
-                              echo $row['category_name'];
-                              echo '</option>';
-                            }
-                          ?>
-                      </select>
-              <a href="javascript:window.open('catego.php','mypopuptitle','width=600,height=400')">Add Category</a>
-          </div>
           <div class="form-group has-feedback">
               <input type="file" name="image" value="<?php echo $product_image;?>" id="in" required class="form-control"/>
           </div>

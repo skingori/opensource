@@ -26,11 +26,11 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
+    $name= $res['Login_Username'];
 
 }
 
@@ -87,16 +87,16 @@ require 'sh.php';
             <option selected="" value="<?php echo $supplier_name;?>">...Select Name...</option>
             <?php
             //include("../connection/db.php");
-            $query = "SELECT * FROM login_table";
+            $query = "SELECT * FROM Login_table";
             $result = mysqli_query($con,$query);
             echo "<option></option>";
             while($row = mysqli_fetch_array($result))
             {
                 $id = $row[id];
-                $login_name=$row[login_name];
+                $Login_Username=$row[Login_Username];
                 //$user_lastname = $row[user_lastname];
                 //$user_firstname= $row[user_firstname];
-                echo "<option>$login_name</option>";
+                echo "<option>$Login_Username</option>";
             }
             ?>
         </select>

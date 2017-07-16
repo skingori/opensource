@@ -26,12 +26,12 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
-    $lid=$res['login_id'];
+    $name= $res['Login_Username'];
+    $lid=$res['Login_Id'];
 
 }
 
@@ -39,32 +39,32 @@ while($res = mysqli_fetch_array($result1))
 if(isset($_POST['update']))
 {
 
-    $login_id_ = mysqli_real_escape_string($con, $_POST['lid']);
-    $login_username_ = mysqli_real_escape_string($con, $_POST['lusername']);
+    $Login_Id_ = mysqli_real_escape_string($con, $_POST['lid']);
+    $Login_Username_ = mysqli_real_escape_string($con, $_POST['lusername']);
 
-    $login_password_ = mysqli_real_escape_string($con, $_POST['lpassword']);
+    $Login_Password_ = mysqli_real_escape_string($con, $_POST['lpassword']);
     $repeat_password = mysqli_real_escape_string($con, $_POST['rpassword']);
-    $enc = md5($login_password_);
+    $enc = md5($Login_Password_);
     //$user_lastname = mysqli_real_escape_string($con, $_POST['lname']);
     //$user_payrollnumber = mysqli_real_escape_string($con, $_POST['pnumber']);
     //$user_email = mysqli_real_escape_string($con, $_POST['email']);
     //$user_phone = mysqli_real_escape_string($con, $_POST['phone']);
 
     // checking empty fields
-    if(empty($login_username_) || empty($login_password_) || ($repeat_password !== $login_password_)) {
+    if(empty($Login_Username_) || empty($Login_Password_) || ($repeat_password !== $Login_Password_)) {
 
-        if(empty($login_username_) || empty($login_password_) ) {
+        if(empty($Login_Username_) || empty($Login_Password_) ) {
             $msg = "<div class='alert alert-danger'>
 						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; Username Required !
 					</div>";
         }
 
-        if(empty($login_password_)) {
+        if(empty($Login_Password_)) {
             $msg = "<div class='alert alert-danger'>
 						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; Password Required !
 					</div>";
         }
-        if($repeat_password !== $login_password_) {
+        if($repeat_password !== $Login_Password_) {
             $msg = "<div class='alert alert-danger'>
 						<span class='glyphicon glyphicon-info-sign'></span> &nbsp; Password does not Match !
 					</div>";
@@ -73,15 +73,15 @@ if(isset($_POST['update']))
 
     } else {
         //updating the table
-        $result = mysqli_query($con, "UPDATE login_table SET login_username='$login_username_',login_password='$enc' WHERE login_id='$login_id_'");
+        $result = mysqli_query($con, "UPDATE Login_table SET Login_Username='$Login_Username_',Login_Password='$enc' WHERE Login_Id='$Login_Id_'");
 
         //redirectig to the display page. In our case, it is index.php
 
         //Javascript is on below of this file for progress bar
 
-        $msg = "<div <div class='alert alert-info'>
-						<progress id='progressBar' value='0' max='10'></progress> &nbsp;  Successfully registered !  system about to log you out.
-                                                
+        $msg = "<div <div class='alert alert-warning'>
+						<progress id='progressBar' value='0' max='10'></progress> &nbsp;  Successful !  system about to log you out.
+
 					</div>";
 
         header('refresh: 10; url=../logout.php?logout');
@@ -92,13 +92,13 @@ if(isset($_POST['update']))
 <?php
 
 //selecting data associated with this particular id
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $login_id_= $res['login_id'];
-    $login_username_= $res['login_username'];
-    $login_password_= $res['login_password'];
+    $Login_Id_= $res['Login_Id'];
+    $Login_Username_= $res['Login_Username'];
+    $Login_Password_= $res['Login_Password'];
     //$user_email = $res['user_email'];
     //$user_phone = $res['user_phone'];
 }
@@ -117,12 +117,12 @@ while($res = mysqli_fetch_array($result1))
     ?>
     <div class="form-group" hidden="">
         <label>ID</label>
-        <input type="text" name="lid" readonly="" required value="<?php echo $login_id_;?>" class="form-control" placeholder="lastname"/>
+        <input type="text" name="lid" readonly="" required value="<?php echo $Login_Id_;?>" class="form-control" placeholder="lastname"/>
     </div>
     <div class="form-group" >
-        
+
         <label>Username</label>
-        <input type="text" name="lusername" readonly="" required value="<?php echo $login_username_;?>" class="form-control" placeholder="lastname"/>
+        <input type="text" name="lusername" readonly="" required value="<?php echo $Login_Username_;?>" class="form-control" placeholder="lastname"/>
     </div>
     <div class="form-group">
         <label>Password</label>

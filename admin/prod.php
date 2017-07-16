@@ -26,11 +26,11 @@ else
 include '../connection/db.php';
 $username=$_SESSION['logname'];
 
-$result1 = mysqli_query($con, "SELECT * FROM login_table WHERE login_username='$username'");
+$result1 = mysqli_query($con, "SELECT * FROM Login_table WHERE Login_Username='$username'");
 
 while($res = mysqli_fetch_array($result1))
 {
-    $name= $res['login_name'];
+    $name= $res['Login_Username'];
 
 }
 
@@ -46,38 +46,50 @@ while($res = mysqli_fetch_array($result1))
 
             //fetching data in descending order (lastest entry first)
             //$result = mysql_query("SELECT * FROM users ORDER BY id DESC"); // mysql_query is deprecated
-            $result = mysqli_query($con, "SELECT * FROM products_table ORDER BY product_id ASC"); // using mysqli_query instead
+            $result = mysqli_query($con, "SELECT * FROM Products_table ORDER BY Product_Id ASC"); // using mysqli_query instead
             ?>
 <span class="input-group-btn">
         <button type='submit' name='search' id='print' onclick="printData();" class="btn btn-flat btn-default "><i class="fa fa-print"></i></button>&nbsp;
         <button type='submit' name='search' id='print' onclick="printData();" class="btn btn-flat btn-default "><i class="fa fa-file"></i></button>
         </span>
             <table  border=0 cellpadding="1" cellspacing="1" id="table1" width="100%" class="table table-hover table-bordered table-striped">
-
+                <thead class="alert-success">
                 <tr bgcolor=''>
                     <td>Product ID</td>
                     <td>Product Code</td>
                     <td>Product Name</td>
-                    <td>Product Price</td>
                     <!--<td>Product Quantity</td>-->
-                    <td>Product Category</td>
                     <td>Image</td>
                     <td></td>
                 </tr>
-                <?php
-                //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array
-                while($res = mysqli_fetch_array($result)) {
-                    echo "<tr class=\"alert-info\">";
-                    echo "<td class=''>".$res['product_id']."</td>";
-                    echo "<td class=''>".$res['product_code']."</td>";
-                    echo "<td>".$res['product_name']."</td>";
-                    echo "<td>".$res['product_price']."</td>";
-                    //echo "<td>".$res['product_quantity']."</td>";
-                    echo "<td>".$res['product_category_id']."</td>";
-                    echo "<td><img width='35' height='35' src=".$res['product_image']."></td>";
-                    echo "<td><a href=\"editp.php?id=$res[product_id]\" style='color: lightcoral' class='fa fa-pencil-square-o fa-lg'></a>&nbsp; <a href=\"delete.php?prod=$res[product_code]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o fa-lg'></a></td>";
-                }
-                ?>
+                </thead>
+            <tbody>
+            <?php
+            //while($res = mysql_fetch_array($result)) { // mysql_fetch_array is deprecated, we need to use mysqli_fetch_array
+            while($res = mysqli_fetch_array($result)) {
+                echo "<tr class=\"alert-info\">";
+                echo "<td class=''>".$res['Product_Id']."</td>";
+                echo "<td class=''>".$res['Product_Code']."</td>";
+                echo "<td>".$res['Product_Name']."</td>";
+                //echo "<td>".$res['product_price']."</td>";
+                //echo "<td>".$res['product_quantity']."</td>";
+                //echo "<td>".$res['product_category_id']."</td>";
+                echo "<td><img width='35' height='35' src=".$res['Product_Image']."></td>";
+                echo "<td><a href=\"editp.php?id=$res[Product_Id]\" style='color: lightcoral' class='fa fa-pencil-square-o fa-lg'></a>&nbsp; <a href=\"delete.php?prod=$res[Product_Code]\" onClick=\"return confirm('Are you sure you want to delete?')\" class='fa fa-trash-o fa-lg'></a></td>";
+            }
+            ?>
+            </tbody>
+                <tfoot class="alert-warning">
+                <tr bgcolor=''>
+                    <td>Product ID</td>
+                    <td>Product Code</td>
+                    <td>Product Name</td>
+                    <!--<td>Product Quantity</td>-->
+                    <td>Image</td>
+                    <td></td>
+                </tr>
+                </tfoot>
+
             </table>
 
         <!--********************Add content here *******************-->
